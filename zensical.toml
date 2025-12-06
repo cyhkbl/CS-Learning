@@ -2,7 +2,7 @@
 site_name = "Blank's CS Learning"
 site_description = "空白棱的CS学习笔记"
 site_author = "空白棱"
-site_url = "https://cyhkbl.github.io/cs-learning/"
+site_url = "https://cyhkbl.github.io/CS-learning/"
 copyright = "&copy; 空白棱"
 
 [project.theme]
