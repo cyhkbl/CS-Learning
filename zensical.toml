@@ -10,7 +10,8 @@ nav = [
     ]},
     {"Python" = [
         { "函数" = "Python/函数.md" },
-        { "调试" = "Python/调试.md" }
+        { "调试" = "Python/调试.md" },
+        { "杂项" = "Python/杂项.md" }
     ]}
 ]
 
