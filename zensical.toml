@@ -6,7 +6,11 @@ site_url = "https://cyhkbl.github.io/CS-learning/"
 copyright = "&copy; 空白棱"
 nav = [
     {"环境" = [
-        { "环境配置" = "环境/环境配置.md" }
+        { "环境配置" = "环境/环境配置.md" },
+        { "包管理" = "环境/包管理.md" }
+    ]},
+    {"Git" = [
+        { "gitignore" = "Git/gitignore.md" }
     ]},
     {"Python" = [
         { "函数" = "Python/函数.md" },
