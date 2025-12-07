@@ -9,6 +9,10 @@ nav = [
         { "环境配置" = "环境/环境配置.md" },
         { "包管理" = "环境/包管理.md" }
     ]},
+    {"Latex" = [
+        { "图片" = "Latex/图片.md" },
+        { "引用" = "Latex/引用.md" }
+    ]},
     {"Git" = [
         { "gitignore" = "Git/gitignore.md" }
     ]},
@@ -16,6 +20,9 @@ nav = [
         { "函数" = "Python/函数.md" },
         { "调试" = "Python/调试.md" },
         { "杂项" = "Python/杂项.md" }
+    ]},
+    {"云" = [
+        { "Azure" = "云/Azure.md" }
     ]}
 ]
 
