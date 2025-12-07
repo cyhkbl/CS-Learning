@@ -8,33 +8,21 @@
 
 `.gitignore` 每行一条规则，常用语法：
 
-### 3.1 基本匹配
-
 * `foo`：匹配任意路径中的 `foo`（文件或目录名）
 * `foo/`：只匹配目录 `foo`
-* `*.log`：匹配所有 `.log` 文件
+* `*.log`：匹配所有 `.log` 后缀名
 * `build` 会匹配 `build`、`a/build`、`a/b/build`
 
-### 3.2 `/` 开头：从 `.gitignore` 所在目录开始匹配
+- `/` 开头：从 `.gitignore` 所在目录开始匹配。例如：`/build/`：只匹配当前 `.gitignore` 同级的 `build/`，不匹配 `a/build/`
 
-* `/build/`：只匹配当前 `.gitignore` 同级的 `build/`，不匹配 `a/build/`
-
-### 3.3 `**`：跨目录通配
-
-* `**/node_modules/`：任何层级的 `node_modules`
-* `logs/**/debug.log`：logs 下任意层级的 debug.log
-
-### 3.4 `?` 和 `[]`
+- `**`：跨目录通配。例如：`**/node_modules/`：匹配任何层级的 `node_modules`
 
 * `?.txt`：一个字符 + `.txt`（如 `a.txt`）
 * `file[0-9].txt`：`file0.txt` 到 `file9.txt`
 
-### 3.5 `!` 反向规则（“排除中的例外”）
+- `!` 反向规则。例如`*.log` 忽略所有 log 后，使用`!keep.log` 把 `keep.log` 重新纳入跟踪
 
-* `*.log` 忽略所有 log
-* `!keep.log` 把 `keep.log` 重新纳入跟踪
-
-注意：如果父目录本身被忽略了，你要“救”子文件，需要同时把目录救回来，例如：
+注意：如果父目录本身被忽略了，要“救”子文件，需要同时把目录救回来，例如：
 
 ```gitignore
 logs/
@@ -42,26 +30,16 @@ logs/
 !logs/keep.log
 ```
 
-### 3.6 `#` 注释与转义
+* `#`注释。`# comment` 是注释
+* `\`转义：若要匹配以 `#` 开头的文件名，用 `\#file`
 
-* `# comment` 是注释
-* 若你要匹配以 `#` 开头的文件名，用 `\#file`
+### 顺序
 
----
+* **越靠后的规则优先**
 
-## 4) 优先级与“谁赢”
+## 已经被提交的文件不会因为 `.gitignore` 而消失
 
-同一个文件可能同时被多条规则命中：
-
-* **越靠后的规则优先**（后写的覆盖前写的）
-* 更具体的规则通常更直观
-* `!` 可以把忽略改回“可跟踪”
-
----
-
-## 5) 最大坑：已经被提交的文件不会因为 `.gitignore` 而消失
-
-例如你已经提交了 `.env`，后来才写进 `.gitignore`，它仍会继续被跟踪。
+例如已经提交了 `.env`，后来才写进 `.gitignore`，它仍会继续被跟踪。
 
 解决办法（只取消跟踪，不删本地文件）：
 
@@ -77,11 +55,9 @@ git rm -r --cached .venv
 git commit -m "Stop tracking venv"
 ```
 
----
+## 查看文件状态
 
-## 6) 实战排错与验证命令（强烈建议记住）
-
-### 6.1 看某个文件为何被忽略（最准）
+### 看某个文件为何被忽略
 
 ```bash
 git check-ignore -v path/to/file
@@ -89,61 +65,19 @@ git check-ignore -v path/to/file
 
 会告诉你：命中了哪个 ignore 文件的哪一行规则。
 
-### 6.2 查看当前仓库有哪些忽略规则来源
+### 看当前仓库有哪些忽略规则来源
 
 ```bash
 git config --get core.excludesfile
 ```
 
-### 6.3 仍然要强制加入一个被忽略的文件
+### 强制加入一个被忽略的文件
 
 ```bash
 git add -f path/to/file
 ```
 
----
-
-## 7) 常用模板（Python / Windows）
-
-### 7.1 Python 项目常见 `.gitignore`
-
-```gitignore
-# venv
-.venv/
-venv/
-
-# python cache
-__pycache__/
-*.py[cod]
-
-# build artifacts
-build/
-dist/
-*.egg-info/
-
-# test/coverage
-.pytest_cache/
-.coverage
-htmlcov/
-
-# IDE
-.vscode/
-.idea/
-
-# OS junk
-.DS_Store
-Thumbs.db
-```
-
-### 7.2 只忽略根目录 `.venv`（不影响子目录同名）
-
-```gitignore
-/.venv/
-```
-
----
-
-## 8) 推荐工作流（让仓库干净）
+## 如何让仓库干净
 
 * 把环境、缓存、构建产物写进 `.gitignore`
 * 把依赖用 `requirements.txt` / `pyproject.toml` 管理
