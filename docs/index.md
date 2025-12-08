@@ -1,3 +1,3 @@
 # Blank's CS Learning
 
-My personal notes on computer science topics. Powered by [Zensical](https://zensical.org/).
+这是我的CS学习笔记。更多有关我的信息可以查看我的[博客](https://cyhkbl.github.io)。

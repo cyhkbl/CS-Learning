@@ -4,6 +4,7 @@ site_description = "空白棱的CS学习笔记"
 site_author = "空白棱"
 site_url = "https://cyhkbl.github.io/CS-learning/"
 copyright = "&copy; 空白棱"
+repo_url = "https://github.com/cyhkbl/CS-learning"
 nav = [
     {"环境" = [
         { "环境配置" = "环境/环境配置.md" },
