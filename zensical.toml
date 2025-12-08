@@ -78,6 +78,3 @@ toggle.name = "Switch to light mode"
 [project.theme.font]
 text = "Noto Serif SC"
 code = "Jetbrains Mono"
-
-[project.theme.icon]
-repo = "avatar_without_background.png"
