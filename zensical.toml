@@ -54,7 +54,7 @@ nav = [
     ]},
     {"CADD" = [
         { "文献阅读" = "CADD/文献阅读.md" }
-    }
+    ]}
 ]
 
 [project.theme]
