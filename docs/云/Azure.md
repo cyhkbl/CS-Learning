@@ -12,13 +12,20 @@
 
 ### 远程桌面
 
-虽然命令行也能用，但 GUI 更直观。下面介绍使用 xRDP + XFCE 桌面环境的方式。
+#### 安装桌面环境
 
-#### 安装
+首先安装GNOME桌面环境：
 
 ```bash
-sudo apt update
-sudo apt install -y xfce4 xfce4-goodies xrdp dbus-x11
+sudo apt install ubuntu-desktop -y
+```
+
+#### 安装远程桌面服务
+
+安装 xRDP：
+
+```bash
+sudo apt install xrdp -y
 ```
 
 2) 让 xRDP 使用 XFCE 会话

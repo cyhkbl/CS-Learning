@@ -43,7 +43,15 @@ nav = [
     ]},
     {"云" = [
         { "SSH" = "云/SSH.md" },
-        { "Azure" = "云/Azure.md" }
+        { "Azure" = "云/Azure.md" },
+        { "Cloudflare" = "云/Cloudflare.md" }
+    ]},
+    {"Linux" = [
+        { "包管理" = "Linux/包管理.md" },
+        { "文件系统" = "Linux/文件系统.md" },
+        { "权限" = "Linux/权限.md" },
+        { "进程" = "Linux/进程.md" },
+        { "美化" = "Linux/美化.md" }
     ]},
     {"BME" = [
         { "生物医学信号处理" = "BME/生物医学信号处理.md" }

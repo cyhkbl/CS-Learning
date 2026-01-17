@@ -70,3 +70,34 @@ ssh-add $env:USERPROFILE\.ssh\id_ed25519
 ```pwsh
 ssh-add -l
 ```
+
+## 连接
+
+### 显式指定私钥
+
+```pwsh
+ssh -i ~/.ssh/your-key.pem username@<虚拟机公网IP>
+```
+
+### 密码登录
+
+```pwsh
+ssh username@<虚拟机公网IP>
+```
+
+### 配置 SSH 配置文件简化连接
+
+编辑 .ssh/config 文件（没有则创建），添加以下内容：
+
+```plaintext
+Host azure-vm
+    HostName <虚拟机公网IP>
+    User <用户名>
+    IdentityFile .ssh/your-key.pem
+```
+
+保存后，可以通过以下命令连接：
+
+```bash
+ssh azure-vm
+```
