@@ -4,7 +4,7 @@
 
 > The open source AI coding agent.
 
-在运行过一次 opencode 后，会生成一个 ~/.config/opencode 文件夹，里面会有一个 opencode.json，如果希望 json 里面可以编写注释的话，可以把后缀名改成 jsonc（下文 oh-my-opencode 也支持这种格式）。
+在运行过一次 opencode 后，会生成一个 `~/.config/opencode` 文件夹，可以新建一个 `opencode.json`，如果希望 json 里面可以编写注释的话，可以把后缀名改成 jsonc（下文 oh-my-opencode 也支持这种格式）。
 
 ### 模型配置
 
@@ -35,6 +35,10 @@
   }
 }
 ```
+
+#### API Key 配置
+
+使用 /connect 命令添加提供商的 API 密钥时，它们会存储在 `~/.local/share/opencode/auth.json` 中。
 
 ### Agent
 
@@ -74,8 +78,42 @@
 }
 ```
 
-## Oh My OpenCode
+### Oh My OpenCode
 
 > 一个异步子代理工具，配备合适的模型，内置 LSP/AST 等精心打造的工具，精选了 MCP 工具集，具有 Claude Code 兼容层，可以自动读取 Claude 配置
 
 让OpenCode帮助安装：在对话框中输入`Install and configure by following the instructions here https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/refs/heads/master/README.md"`
+
+安装完成后，启动 OpenCode，`~/.config/opencode`配置目录里多了 oh-my-opencode.json，这里可以配置每个子 Agent 使用什么模型。例如：
+
+```jsonc
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+  "agents": {
+    "Sisyphus": {// 西西弗斯，负责协调和直接执行简单的任务
+      "model": "antigravity-api/gemini-3-flash"
+    },
+    "librarian": {// 帮助你查找库相关的信息
+      "model": "volcengine-ark-api/deepseek-v3-2-251201"
+    },
+    "explore": {// 探索现有代码仓库
+      "model": "antigravity-api/claude-sonnet-4-5"
+    },
+    "oracle": {// 先知，执行困难的任务和debug
+      "model": "antigravity-api/claude-opus-4-5-thinking"
+    },
+    "frontend-ui-ux-engineer": {// 前端设计师
+      "model": "antigravity-api/gemini-3-pro-high"
+    },
+    "document-writer": {// 写文档的模型
+      "model": "volcengine-ark-api/deepseek-v3-2-251201"
+    },
+    "multimodal-looker": {// 多模态识别
+      "model": "antigravity-api/gemini-3-flash"
+    }
+  }
+}
+```
+
+## Claude Code
+
