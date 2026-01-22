@@ -1,5 +1,7 @@
 # CLI工具
 
+> 轻量、灵活、适合DevOps场景
+
 ## OpenCode
 
 > The open source AI coding agent.
