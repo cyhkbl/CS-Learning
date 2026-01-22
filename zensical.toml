@@ -38,12 +38,12 @@ nav = [
         { "网络安全" = "安全/网络安全.md" }
     ]},
     {"AI" = [
-        { "MCP" = "AI/MCP.md" },
+        { "提示词工程" = "AI/提示词工程.md" },
         { "CLI工具" = "AI/CLI工具.md" },
-        { "反代与API统一管理" = "AI/反代与API统一管理.md" },
-        { "VSCode扩展" = "AI/VSCode扩展.md" },
         { "AI IDE" = "AI/AI IDE.md" },
-        { "提示词工程" = "AI/提示词工程.md" }
+        { "VSCode扩展" = "AI/VSCode扩展.md" },
+        { "反代与API统一管理" = "AI/反代与API统一管理.md" },
+        { "MCP" = "AI/MCP.md" }
     ]},
     {"云" = [
         { "SSH" = "云/SSH.md" },

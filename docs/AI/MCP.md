@@ -1,6 +1,6 @@
 # MCP
 
-MCP提供了一个通用的标准，让 AI 模型、AI 客户端（如 Cursor、Claude Desktop）和数据源（本地文件、数据库、API）之间能够互相联系。
+> MCP提供了一个通用的标准，让 AI 模型、AI 客户端（如 Cursor、Claude Desktop）和数据源（本地文件、数据库、API）之间能够互相联系。
 
 ## MCP Host (主机)
 
@@ -14,7 +14,7 @@ AI 客户端，比如 **Claude Desktop App**、**Cursor**、**Windsurf** 等 IDE
 
 连接 Host 和 Server 的桥梁（通常集成在 Host 里）。
 
-## MCP的实际配置
+## MCP配置
 
 ### 下载 MCP Host
 
@@ -31,29 +31,31 @@ AI 客户端，比如 **Claude Desktop App**、**Cursor**、**Windsurf** 等 IDE
 ```json
 {
   "mcpServers": {
-    "sqlite": {
+    "playwright": {
       "command": "npx",
       "args": [
-        "-y",
-        "@modelcontextprotocol/server-sqlite",
-        "--db-path",
-        "/Users/username/test.db" 
+        "@playwright/mcp@latest"
       ]
     }
   }
 }
 ```
 
-### 文件系统服务器 (Filesystem Server)
+由于Windows系统需要命令解释器（cmd.exe或powershell.exe）来执行大多数脚本命令，当使用npx @playwright/mcp@latest时，可能会报错：npx 不是独立的可执行文件，它是npm包中的一个JavaScript脚本。Windows无法直接解析npx命令，需要cmd.exe来解释它。正确的调用方式应该是：`cmd /c npx @playwright/mcp@latest`
 
-允许 AI 直接读取、修改你电脑指定文件夹里的代码或文档。
+因此，在Windows中配置需要加入 `/c npx` 参数，应该改为：
 
-### GitHub 服务器 (GitHub Server)
-
-允许 AI 读取你的云端仓库、提交 PR、查看 Issue。
-
-### MCP Server 资源库
-
-**Glama / MCP Servers Directory**
-
-**GitHub 上的 `modelcontextprotocol/servers` 仓库**
+```json
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "/c",
+        "npx",
+        "@playwright/mcp@latest"
+      ]
+    }
+  }
+}
+``` 
