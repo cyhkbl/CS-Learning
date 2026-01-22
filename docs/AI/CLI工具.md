@@ -117,3 +117,18 @@
 
 ## Claude Code
 
+### 安装
+
+```bash
+npm install -g @anthropic-ai/claude-code
+```
+
+### 命令
+
+- 确认目前的 Provider：`/status`
+- 总结上下文：对话太长，输入 `/compact` 清理掉不必要的历史数据。
+- 彻底重置上下文：开启一个新任务前，使用 `/clear` 彻底重置上下文。
+
+### 子代理
+
+使用 `/agent` 命令创建子代理。可以创建用户代理与项目代理。用户代理的位置在 `~/.claude-code/agents/`，项目代理的位置在项目根目录的 `.claude-code/agents/`。
