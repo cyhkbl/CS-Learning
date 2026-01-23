@@ -43,7 +43,8 @@ nav = [
         { "AI IDE" = "AI/AI IDE.md" },
         { "VSCode扩展" = "AI/VSCode扩展.md" },
         { "反代与API统一管理" = "AI/反代与API统一管理.md" },
-        { "MCP" = "AI/MCP.md" }
+        { "MCP" = "AI/MCP.md" },
+        { "Skills" = "AI/Skills.md" }
     ]},
     {"云" = [
         { "SSH" = "云/SSH.md" },

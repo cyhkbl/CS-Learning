@@ -101,3 +101,30 @@ Host azure-vm
 ```bash
 ssh azure-vm
 ```
+
+## 主机
+
+可以将自己的电脑设置为ssh主机，允许其他设备通过ssh连接到自己的电脑。
+
+### 安装
+
+Windows 10及以上版本可以通过“可选功能”安装“OpenSSH 服务器”。也可以使用Scoop等包管理工具安装。
+
+```pwsh
+scoop install openssh
+```
+
+安装完成后，以管理员身份运行以下脚本安装SSH Server服务：
+
+```pwsh
+sudo $dir\install-sshd.ps1
+```
+
+### 启动服务
+
+OpenSSH 服务启动时需要密钥文件。如果这些文件不存在，服务会直接崩溃。进入OpenSSH安装目录，在管理员权限的 PowerShell 中运行以下命令：
+
+```pwsh
+.\ssh-keygen.exe -A
+```
+
