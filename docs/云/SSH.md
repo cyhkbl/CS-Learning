@@ -106,25 +106,81 @@ ssh azure-vm
 
 可以将自己的电脑设置为ssh主机，允许其他设备通过ssh连接到自己的电脑。
 
-### 安装
+### 安装与配置
 
-Windows 10及以上版本可以通过“可选功能”安装“OpenSSH 服务器”。也可以使用Scoop等包管理工具安装。
+#### 安装
 
-```pwsh
-scoop install openssh
-```
+Windows 10及以上版本可以通过“可选功能”安装“OpenSSH 服务器”。
 
-安装完成后，以管理员身份运行以下脚本安装SSH Server服务：
+#### 服务
 
-```pwsh
-sudo $dir\install-sshd.ps1
-```
-
-### 启动服务
-
-OpenSSH 服务启动时需要密钥文件。如果这些文件不存在，服务会直接崩溃。进入OpenSSH安装目录，在管理员权限的 PowerShell 中运行以下命令：
+打开 PowerShell（管理员身份），启动SSH Server服务并设置自启。
 
 ```pwsh
-.\ssh-keygen.exe -A
+Start-Service sshd
+Set-Service -Name sshd -StartupType 'Automatic'
 ```
 
+配置防火墙规则：
+
+```pwsh
+# 允许 22 端口通过防火墙
+if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyContinue)) {
+    New-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -DisplayName "OpenSSH Server (sshd)" -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
+}
+```
+
+#### 配置 DDNS
+
+家用公网 IP 通常会定期变动。需要一个域名实时指向家里当前的 IP。查看路由器后台（“高级设置” -> “动态 DNS”或 “DDNS”）。
+
+我用的是公云：https://www.pubyun.com/，点击“申请动态域名”。然后在路由器界面配置pub云上创建的用户名、密码、动态域名即可。状态检查可以填写每 5 分钟检查一次 IP 是否变动，强制更新可以填写每 24 小时无论 IP 是否变动都强制刷新一次（防止账号因长时间不活跃被回收）。这样，只需要连接域名即可（例如我的域名`blank.x3322.net`对应IP）。
+
+#### 配置静态 IP
+
+在DHCP静态IP分配中为电脑配置静态内网IP。
+
+#### 配置端口转发
+
+* **外部端口**：建议使用非标准端口（如 `8822`），以规避针对 `22` 端口的自动化脚本攻击。
+* **内部端口**：`22`（Windows SSH 的默认端口）。
+* **内部 IP**：电脑的固定 IP（`192.168.1.100`）。
+* **协议**：TCP。
+
+这样，在公网连接`blank.x3322.net:8822`即可通过路由器转发到22端口访问家里的电脑。
+
+#### SSH 密钥登录
+
+长期将 SSH 端口暴露在公网，仅靠密码是非常危险的。**强烈建议禁用密码登录，改用密钥。**
+
+1. 在手机 SSH 客户端（如 Termius）中生成一对密钥（RSA 或 Ed25519），并复制其**公钥 (Public Key)**。
+2. 在 Windows 的 `C:\Users\你的用户名\.ssh\` 文件夹下，新建一个名为 `authorized_keys` 的文件（无后缀名）。
+3. 将手机生成的公钥粘贴进去。
+4. **修改权限**：这一步非常关键，右键该文件 -> 属性 -> 安全 -> 高级，**禁用继承**，并确保只有你自己的账号和 SYSTEM 拥有读取权限，否则 SSH 服务会出于安全考虑拒绝该密钥。
+5. 修改`sshd_config`：以管理员身份运行记事本，打开：C:\ProgramData\ssh\sshd_config，滚动到文件最底部。找到这两行，并在每一行开头添加 # 号将其注释掉：
+```Plaintext
+# Match Group administrators
+#       AuthorizedKeysFile __PROGRAMDATA__/ssh/administrators_authorized_keys
+```
+
+保存文件，在 PowerShell 中重启服务使其生效：
+
+```PowerShell
+Restart-Service sshd
+```
+
+### 禁用密码登录 (慎重，确保密钥能通后再操作)
+
+编辑 `C:\ProgramData\ssh\sshd_config`：
+
+```text
+PubkeyAuthentication yes
+PasswordAuthentication no  # 关键：验证成功后改为此项
+
+```
+
+然后重启 SSH 服务：`Restart-Service sshd`。
+
+### 连接
+
+在手机上**关闭代理**（或者进行合理的代理配置），使用 Termius 等 SSH 客户端连接。
