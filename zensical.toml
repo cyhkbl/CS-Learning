@@ -1,9 +1,9 @@
 [project]
 site_name = "Blank's CS Learning"
-site_description = "空白棱的CS学习笔记"
-site_author = "空白棱"
+site_description = "空白栈的CS学习笔记"
+site_author = "空白栈"
 site_url = "https://cyhkbl.github.io/CS-Learning/"
-copyright = "&copy; 空白棱"
+copyright = "&copy; 空白栈"
 repo_url = "https://github.com/cyhkbl/CS-Learning"
 nav = [
     {"环境" = [
@@ -22,6 +22,7 @@ nav = [
     ]},
     {"Python" = [
         { "函数" = "Python/函数.md" },
+        { "数据结构" = "Python/数据结构.md" },
         { "调试" = "Python/调试.md" },
         { "杂项" = "Python/杂项.md" }
     ]},
@@ -30,7 +31,8 @@ nav = [
         { "网络连接" = "网络/网络连接.md" },
         { "代理" = "网络/代理.md" },
         { "VPN" = "网络/VPN.md" },
-        { "P2P" = "网络/P2P.md" }
+        { "P2P" = "网络/P2P.md" },
+        { "WOL" = "网络/WOL.md" }
     ]},
     {"安全" = [
         { "设备识别与认证" = "安全/设备识别与认证.md" },
@@ -48,6 +50,8 @@ nav = [
     ]},
     {"云" = [
         { "SSH" = "云/SSH.md" },
+        { "搭建代理" = "云/搭建代理.md" },
+        { "文件传输" = "云/文件传输.md" },
         { "Azure" = "云/Azure.md" },
         { "Cloudflare" = "云/Cloudflare.md" }
     ]},
@@ -64,7 +68,7 @@ nav = [
     {"EE" = [
         { "无线电" = "EE/无线电.md" },
         { "数字音频" = "EE/数字音频.md" },
-        { "近场通讯" = "EE/近场通讯.md" }
+        { "近场通信" = "EE/近场通信.md" }
     ]},
     {"CADD" = [
         { "文献阅读" = "CADD/文献阅读.md" }
