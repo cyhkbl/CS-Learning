@@ -134,3 +134,18 @@ npm install -g @anthropic-ai/claude-code
 ### 子代理
 
 使用 `/agent` 命令创建子代理。可以创建用户代理与项目代理。用户代理的位置在 `~/.claude-code/agents/`，项目代理的位置在项目根目录的 `.claude-code/agents/`。
+
+### 插件
+
+#### oh-my-claudecode
+
+仓库地址：<https://github.com/Yeachan-Heo/oh-my-claudecode>
+
+魔法关键词：
+
+- autopilot：完全自主执行
+- ralph：持久模式 
+- ulw：最大并行度 
+- eco：令牌高效执行 
+- plan：规划面向执行
+- 合并它们： ralph ulw = 持久性 + 并行性
