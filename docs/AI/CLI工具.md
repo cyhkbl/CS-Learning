@@ -64,6 +64,8 @@
 }
 ```
 
+可以通过@命令调用子代理，例如：`@code-reviewer 这段代码有什么问题吗？`
+
 ### 权限
 
 默认情况下，opencode 允许所有操作而无需明确批准。你可以使用 permission 选项更改此设置。
@@ -149,3 +151,84 @@ npm install -g @anthropic-ai/claude-code
 - eco：令牌高效执行 
 - plan：规划面向执行
 - 合并它们： ralph ulw = 持久性 + 并行性
+
+## Codex CLI
+
+在白嫖（bushi）Claude Code API失败（好几个公益站都有时报错）后，我转而使用 Codex CLI，因为Codex的模型支持更稳定。
+
+### 配置
+
+在`~/.codex`目录下，Codex的配置文件夹结构如下：
+
+```plaintext
+.codex/
+  ├── AGENTS.md           # 全局指令
+  ├── AGENTS.override.md  # 覆盖配置（优先级更高）
+  ├── prompts/            # 自定义提示词模板
+  │   ├── check-fix.md
+  │   ├── refactor.md
+  │   └── ...
+  ├── skills/             # 自定义技能（类似 slash commands）
+  │   ├── play/
+  │   │   └── SKILL.md
+  │   ├── mindmap/
+  │   │   └── SKILL.md
+  │   ├── plan/
+  │   │   └── SKILL.md
+  │   └── prompt/
+  │       └── SKILL.md
+  └── sessions/           # 会话历史
+```
+
+### AGENTS.md
+
+全局指令文件，可以让其它AI撰写指令。例如：
+
+```markdown
+- Always reply in Chinese.
+- 除非用户明确要求英文，否则所有回复使用简体中文。
+- 代码标识符、命令、日志、报错信息保持原始语言；其余解释用中文。
+```
+
+### prompts
+
+prompts 目录下可以放自定义的提示词模板，用法是 `/提示词名称`。例如：`/check-fix`，用来在改完 bug 之后做影响分析，防止改了一处炸了三处：
+
+```markdown
+# 修复影响检查 (Fix Impact Analysis)
+
+对当前修改进行全面影响分析，检查是否对其他逻辑造成破坏。
+
+## 检查维度
+
+### 1️⃣ 直接影响分析
+- 修改的函数/方法被哪些地方调用？
+- 修改的参数签名是否向后兼容？
+- 返回值类型/结构是否发生变化？
+
+### 2️⃣ 间接影响分析
+- 调用链上下游的数据流向
+- 共享状态/全局变量的修改
+- 事件监听器/回调函数的触发时机
+
+### 3️⃣ 数据结构兼容性
+- 新增字段: 旧数据读取时是否有默认值？
+- 删除字段: 是否有代码仍在访问该字段？
+- 类型变更: string→number 等隐式转换
+```
+
+### skills
+
+skills 目录下可以放自定义的技能（类似 slash commands）。例如：`/play`，用来自动化浏览器操作：
+
+```markdown
+# 打开链接（Playwright 自动化）
+
+**核心任务**：使用 Playwright MCP 工具自动化浏览器操作。
+
+## 执行步骤
+1. 打开链接（browser_navigate）
+2. 获取页面状态（browser_snapshot）
+3. 处理登录逻辑（如果需要）
+4. 遇到问题立即停止并告知
+```
