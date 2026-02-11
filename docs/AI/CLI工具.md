@@ -82,49 +82,26 @@
 }
 ```
 
-### Oh My OpenCode
-
-> 一个异步子代理工具，配备合适的模型，内置 LSP/AST 等精心打造的工具，精选了 MCP 工具集，具有 Claude Code 兼容层，可以自动读取 Claude 配置
-
-让OpenCode帮助安装：在对话框中输入`Install and configure by following the instructions here https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/refs/heads/master/README.md"`
-
-安装完成后，启动 OpenCode，`~/.config/opencode`配置目录里多了 oh-my-opencode.json，这里可以配置每个子 Agent 使用什么模型。例如：
-
-```jsonc
-{
-  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
-  "agents": {
-    "Sisyphus": {// 西西弗斯，负责协调和直接执行简单的任务
-      "model": "antigravity-api/gemini-3-flash"
-    },
-    "librarian": {// 帮助你查找库相关的信息
-      "model": "volcengine-ark-api/deepseek-v3-2-251201"
-    },
-    "explore": {// 探索现有代码仓库
-      "model": "antigravity-api/claude-sonnet-4-5"
-    },
-    "oracle": {// 先知，执行困难的任务和debug
-      "model": "antigravity-api/claude-opus-4-5-thinking"
-    },
-    "frontend-ui-ux-engineer": {// 前端设计师
-      "model": "antigravity-api/gemini-3-pro-high"
-    },
-    "document-writer": {// 写文档的模型
-      "model": "volcengine-ark-api/deepseek-v3-2-251201"
-    },
-    "multimodal-looker": {// 多模态识别
-      "model": "antigravity-api/gemini-3-flash"
-    }
-  }
-}
-```
-
 ## Claude Code
 
 ### 安装
 
 ```bash
-npm install -g @anthropic-ai/claude-code
+scoop install claude-code
+```
+
+### 配置
+
+在`~/.claude`目录下，Claude Code的配置文件夹结构如下：
+
+```plaintext
+.codex/
+  ├── settings.json       # 主配置文件（模型、权限、hooks、状态栏、渲染等）
+  ├── commands/           # 自定义 slash 命令。
+  ├── agents/             # 自定义子代理（subagents）
+  ├── output-styles/      # 自定义输出风格
+  ├── plugins/            # 自定义插件
+  └── todos/              # Todo 管理
 ```
 
 ### 命令
@@ -137,21 +114,6 @@ npm install -g @anthropic-ai/claude-code
 
 使用 `/agent` 命令创建子代理。可以创建用户代理与项目代理。用户代理的位置在 `~/.claude-code/agents/`，项目代理的位置在项目根目录的 `.claude-code/agents/`。
 
-### 插件
-
-#### oh-my-claudecode
-
-仓库地址：<https://github.com/Yeachan-Heo/oh-my-claudecode>
-
-魔法关键词：
-
-- autopilot：完全自主执行
-- ralph：持久模式 
-- ulw：最大并行度 
-- eco：令牌高效执行 
-- plan：规划面向执行
-- 合并它们： ralph ulw = 持久性 + 并行性
-
 ## Codex CLI
 
 在白嫖（bushi）Claude Code API失败（好几个公益站都有时报错）后，我转而使用 Codex CLI，因为Codex的模型支持更稳定。
@@ -163,21 +125,10 @@ npm install -g @anthropic-ai/claude-code
 ```plaintext
 .codex/
   ├── AGENTS.md           # 全局指令
-  ├── AGENTS.override.md  # 覆盖配置（优先级更高）
+  ├── config.toml         # 配置文件
+  ├── auth.json           # API密钥等认证信息
   ├── prompts/            # 自定义提示词模板
-  │   ├── check-fix.md
-  │   ├── refactor.md
-  │   └── ...
-  ├── skills/             # 自定义技能（类似 slash commands）
-  │   ├── play/
-  │   │   └── SKILL.md
-  │   ├── mindmap/
-  │   │   └── SKILL.md
-  │   ├── plan/
-  │   │   └── SKILL.md
-  │   └── prompt/
-  │       └── SKILL.md
-  └── sessions/           # 会话历史
+  └── skills/             # 自定义技能（类似 slash commands）
 ```
 
 ### AGENTS.md
@@ -188,6 +139,41 @@ npm install -g @anthropic-ai/claude-code
 - Always reply in Chinese.
 - 除非用户明确要求英文，否则所有回复使用简体中文。
 - 代码标识符、命令、日志、报错信息保持原始语言；其余解释用中文。
+```
+
+### config.toml
+
+Codex 的主配置文件。
+
+#### MCP Server 配置
+
+Codex 目前仅支持 STDIO。如果你是 Windows 开发者，遵从 mcp_servers 一定会配置失败。通常进入 Codex 你会看到`Program not found` 或 `request timed out`。
+
+需要在原教程文档基础上新增 command 指向具体的 npx 位置，以及env 包含 SYSTEMROOT，例如：
+
+```toml
+[mcp_servers.context7]
+command = "C:\\Program Files\\nodejs\\npx.cmd"
+args = ["-y", "@upstash/context7-mcp", "--api-key", "<your_api_key>"]
+env = {SYSTEMROOT = 'C:\Windows'}
+```
+
+#### Profiles配置
+
+Profiles 用来定义不同的模型和推理强度组合，方便在交互式和非交互式命令中切换。
+
+交互式启动：
+
+```bash
+codex -p balanced
+codex -p deep
+```
+
+非交互执行：
+
+```bash
+codex exec -p fast "你的任务描述"
+codex exec -p deep "你的任务描述"
 ```
 
 ### prompts
@@ -232,3 +218,17 @@ skills 目录下可以放自定义的技能（类似 slash commands）。例如�
 3. 处理登录逻辑（如果需要）
 4. 遇到问题立即停止并告知
 ```
+
+### 命令
+
+- `/approvals`：
+
+授予 Codex 权限，目前有三种，如果超出权限限制，就需要用户手动确认：
+
+Read Only：默认权限，只能读取文件
+
+Auto：读写，运行命令（还是有一些手动批准）
+
+Full Access：读写、使用网络工具（真正的 Auto，整个过程不需要一次确认）
+
+- `/status`：显示当前模型、权限等状态信息。
