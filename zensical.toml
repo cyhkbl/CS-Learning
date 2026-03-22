@@ -6,9 +6,12 @@ site_url = "https://cyhkbl.github.io/CS-Learning/"
 copyright = "&copy; 空白栈"
 repo_url = "https://github.com/cyhkbl/CS-Learning"
 nav = [
+    {"主页" = "index.md"},
     {"环境" = [
         { "环境配置" = "环境/环境配置.md" },
-        { "包管理" = "环境/包管理.md" }
+        { "包管理" = "环境/包管理.md" },
+        { "Docker" = "环境/Docker.md" },
+        { "DotFile" = "环境/DotFile.md" }
     ]},
     {"Latex" = [
         { "基础" = "Latex/基础.md" },
@@ -22,9 +25,14 @@ nav = [
     ]},
     {"Python" = [
         { "函数" = "Python/函数.md" },
+        { "库" = "Python/库.md" },
         { "数据结构" = "Python/数据结构.md" },
+        { "面向对象" = "Python/面向对象.md" },
         { "调试" = "Python/调试.md" },
         { "杂项" = "Python/杂项.md" }
+    ]},
+    {"Lisp" = [
+        { "Scheme" = "Lisp/Scheme.md" }
     ]},
     {"网络" = [
         { "网络基础" = "网络/网络基础.md" },
@@ -46,7 +54,10 @@ nav = [
         { "VSCode扩展" = "AI/VSCode扩展.md" },
         { "反代与API统一管理" = "AI/反代与API统一管理.md" },
         { "MCP" = "AI/MCP.md" },
-        { "Skills" = "AI/Skills.md" }
+        { "Skills" = "AI/Skills.md" },
+        { "知识" = "AI/知识.md" },
+        { "神经网络" = "AI/神经网络.md" },
+        { "深度学习" = "AI/深度学习.md" }
     ]},
     {"云" = [
         { "SSH" = "云/SSH.md" },
@@ -56,23 +67,46 @@ nav = [
         { "Cloudflare" = "云/Cloudflare.md" }
     ]},
     {"Linux" = [
+        { "基础" = "Linux/基础.md" },
         { "包管理" = "Linux/包管理.md" },
         { "文件系统" = "Linux/文件系统.md" },
         { "权限" = "Linux/权限.md" },
         { "进程" = "Linux/进程.md" },
-        { "美化" = "Linux/美化.md" }
+        { "美化" = "Linux/美化.md" },
+        { "Arch Linux" = "Linux/Arch Linux.md" },
+        { "Termux" = "Linux/Termux.md" },
+        { "Ubuntu" = "Linux/Ubuntu.md" }
+    ]},
+    {"OI" = [
+        { "递归" = "OI/递归.md" },
+        { "时间复杂度" = "OI/时间复杂度.md" },
+        { "搜索" = "OI/搜索.md" }
+    ]},
+    {"Web3" = [
+        { "币" = "Web3/币.md" },
+        { "钱包" = "Web3/钱包.md" },
+        { "区块链" = "Web3/区块链.md" },
+        { "网络" = "Web3/网络.md" },
+        { "U卡" = "Web3/U卡.md" }
     ]},
     {"BME" = [
-        { "生物医学信号处理" = "BME/生物医学信号处理.md" }
+        { "信号处理" = "BME/信号处理.md" },
+        { "CT图像重建" = "BME/CT图像重建.md" },
+        { "光" = "BME/光.md" }
     ]},
     {"EE" = [
         { "无线电" = "EE/无线电.md" },
         { "数字音频" = "EE/数字音频.md" },
-        { "近场通信" = "EE/近场通信.md" }
+        { "嵌入式" = "EE/嵌入式.md" },
+        { "近场通讯" = "EE/近场通讯.md" }
     ]},
     {"CADD" = [
-        { "文献阅读" = "CADD/文献阅读.md" }
+        { "文献阅读" = "CADD/文献阅读.md" },
+        { "RDKit" = "CADD/RDKit.md" },
+        { "SMILES" = "CADD/SMILES.md" },
+        { "[ICLR26] PepbenchMark 复现" = "CADD/[ICLR26] PepbenchMark 复现.md" }
     ]}
+
 ]
 
 [project.theme]
