@@ -130,6 +130,44 @@ entry_points={
 
 ## 编译 
 
+### 进入工作空间
+
+在执行构建命令之前，你必须处于工作空间的**根目录**（通常叫 `dev_ws` 或 `ros2_ws`）。
+
+```bash
+cd ~/ros2_ws
+```
+
+### 执行构建命令
+
+使用 `colcon build` 来编译整个工作空间：
+```bash
+colcon build
+```
+
+参数：
+
+* **`--symlink-install`**：
+    使用软链接安装。这样当你修改 **Python 脚本**或**配置文件**（如 launch 文件）时，不需要重新 build 就能直接运行新代码。
+* **`--packages-select <package_name>`**：
+    只编译特定的包。如果你的工作空间很大，这能节省大量时间。
+* **`--continue-on-error`**：
+    即便某个包报错，也继续编译其他不相关的包。
+
+### 环境生效 (Source)
+
+```bash
+# 在当前工作空间下
+source install/setup.bash
+```
+
+## 运行
+
+运行节点：
+```bash
+ros2 run <package_name> <executable_name>
+```
+
 ## 核心机制
 
 ### DDS (Data Distribution Service)
@@ -141,15 +179,3 @@ entry_points={
 ### The RMW (ROS Middleware Interface)
 
 为了不被某一家 DDS 厂商绑死，ROS 2 加了一层“适配器”。无论底层用的是 eProsima Fast DDS 还是 Cyclone DDS，对你写的业务代码来说都是透明的。
-
-
-## 串起来的？
-
-1.  你通过 **`pkg create`** 建立了一个“工作间”（Package）。
-2.  你在 Package 里写了一个或多个 **Node**（职员）。
-3.  通过 **`colcon build`** 将源码编译成二进制文件。
-4.  通过 **`source install/setup.bash`** 告诉系统去哪里找这些职员。
-5.  通过 **`ros2 run`** 启动职员。
-6.  职员们通过 **DDS** 互相发现，并按照你定义的 **Topic/Service/Action** 协议开始交流。
-
-
