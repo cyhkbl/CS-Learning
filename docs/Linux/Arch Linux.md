@@ -18,6 +18,8 @@ Arch 是滚动发行：
 pacman -Syu
 ```
 
+`-Syu`：同步包数据库并更新系统。
+
 如果提示 keyring 或签名问题，可以先：
 
 ```bash
