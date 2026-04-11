@@ -13,6 +13,9 @@ nav = [
         { "Docker" = "环境/Docker.md" },
         { "DotFile" = "环境/DotFile.md" }
     ]},
+    {"具身智能" = [
+        { "ROS" = "具身智能/ROS.md" }
+    ]},
     {"Latex" = [
         { "基础" = "Latex/基础.md" },
         { "图片" = "Latex/图片.md" },
@@ -102,8 +105,10 @@ nav = [
     ]},
     {"CADD" = [
         { "文献阅读" = "CADD/文献阅读.md" },
+        { "[Curr Comput Aided Drug Des] Molecular docking: a powerful approach for structure-based drug discovery" = "CADD/[Curr Comput Aided Drug Des] Molecular docking: a powerful approach for structure-based drug discovery.md" },
         { "RDKit" = "CADD/RDKit.md" },
         { "SMILES" = "CADD/SMILES.md" },
+        { "[Pharmaceuticals] Computer-Aided Drug Design and Drug Discovery：A Prospective Analysis" = "CADD/[Pharmaceuticals] Computer-Aided Drug Design and Drug Discovery：A Prospective Analysis.md" },
         { "[ICLR26] PepbenchMark 复现" = "CADD/[ICLR26] PepbenchMark 复现.md" }
     ]}
 
