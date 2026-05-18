@@ -103,6 +103,16 @@ nav = [
         { "嵌入式" = "EE/嵌入式.md" },
         { "近场通讯" = "EE/近场通讯.md" }
     ]},
+    {"前端" = [
+        { "HTML" = "前端/HTML.md" },
+        { "CSS" = "前端/CSS.md" },
+        { "JavaScript" = "前端/JavaScript.md" },
+        { "TypeScript" = "前端/TypeScript.md" },
+        { "React" = "前端/React.md" },
+        { "Next.js" = "前端/Next.js.md" },
+        { "Tailwind CSS" = "前端/Tailwind CSS.md" },
+        { "前端工程化" = "前端/前端工程化.md" }
+    ]},
     {"CADD" = [
         { "文献阅读" = "CADD/文献阅读.md" },
         { "[Curr Comput Aided Drug Des] Molecular docking: a powerful approach for structure-based drug discovery" = "CADD/[Curr Comput Aided Drug Des] Molecular docking: a powerful approach for structure-based drug discovery.md" },
