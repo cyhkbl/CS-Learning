@@ -1,9 +1,9 @@
 [project]
 site_name = "Blank's CS Learning"
-site_description = "空白栈的CS学习笔记"
-site_author = "空白栈"
+site_description = "空白棱的CS学习笔记"
+site_author = "空白棱"
 site_url = "https://cyhkbl.qzz.io/CS-Learning/"
-copyright = "&copy; 空白栈"
+copyright = "&copy; 空白棱"
 repo_url = "https://github.com/cyhkbl/CS-Learning"
 nav = [
     {"主页" = "index.md"},
