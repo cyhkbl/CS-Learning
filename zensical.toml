@@ -8,121 +8,121 @@ repo_url = "https://github.com/cyhkbl/CS-Learning"
 nav = [
     {"主页" = "index.md"},
     {"环境" = [
-        { "环境配置" = "环境/环境配置.md" },
-        { "包管理" = "环境/包管理.md" },
-        { "Docker" = "环境/Docker.md" },
-        { "DotFile" = "环境/DotFile.md" }
-    ]},
-    {"具身智能" = [
-        { "ROS" = "具身智能/ROS.md" }
-    ]},
-    {"Latex" = [
-        { "基础" = "Latex/基础.md" },
-        { "图片" = "Latex/图片.md" },
-        { "引用" = "Latex/引用.md" }
-    ]},
-    {"Git" = [
-        { "基础" = "Git/基础.md" },
-        { "网络配置" = "Git/网络配置.md" },
-        { "gitignore" = "Git/gitignore.md" }
-    ]},
-    {"Python" = [
-        { "函数" = "Python/函数.md" },
-        { "库" = "Python/库.md" },
-        { "数据结构" = "Python/数据结构.md" },
-        { "面向对象" = "Python/面向对象.md" },
-        { "调试" = "Python/调试.md" },
-        { "杂项" = "Python/杂项.md" }
-    ]},
-    {"Lisp" = [
-        { "Scheme" = "Lisp/Scheme.md" }
-    ]},
-    {"网络" = [
-        { "网络基础" = "网络/网络基础.md" },
-        { "网络连接" = "网络/网络连接.md" },
-        { "代理" = "网络/代理.md" },
-        { "VPN" = "网络/VPN.md" },
-        { "P2P" = "网络/P2P.md" },
-        { "WOL" = "网络/WOL.md" }
-    ]},
-    {"安全" = [
-        { "设备识别与认证" = "安全/设备识别与认证.md" },
-        { "网络认证" = "安全/网络认证.md" },
-        { "网络安全" = "安全/网络安全.md" }
-    ]},
-    {"AI" = [
-        { "提示词工程" = "AI/提示词工程.md" },
-        { "CLI工具" = "AI/CLI工具.md" },
-        { "AI IDE" = "AI/AI IDE.md" },
-        { "VSCode扩展" = "AI/VSCode扩展.md" },
-        { "反代与API统一管理" = "AI/反代与API统一管理.md" },
-        { "MCP" = "AI/MCP.md" },
-        { "Skills" = "AI/Skills.md" },
-        { "知识" = "AI/知识.md" },
-        { "神经网络" = "AI/神经网络.md" },
-        { "深度学习" = "AI/深度学习.md" }
-    ]},
-    {"云" = [
-        { "SSH" = "云/SSH.md" },
-        { "搭建代理" = "云/搭建代理.md" },
-        { "文件传输" = "云/文件传输.md" },
-        { "Azure" = "云/Azure.md" },
-        { "Cloudflare" = "云/Cloudflare.md" }
+        {"环境配置" = "环境/环境配置.md"},
+        {"包管理" = "环境/包管理.md"},
+        {"Docker" = "环境/Docker.md"},
+        {"DotFile" = "环境/DotFile.md"}
     ]},
     {"Linux" = [
-        { "基础" = "Linux/基础.md" },
-        { "包管理" = "Linux/包管理.md" },
-        { "文件系统" = "Linux/文件系统.md" },
-        { "权限" = "Linux/权限.md" },
-        { "进程" = "Linux/进程.md" },
-        { "美化" = "Linux/美化.md" },
-        { "Arch Linux" = "Linux/Arch Linux.md" },
-        { "Termux" = "Linux/Termux.md" },
-        { "Ubuntu" = "Linux/Ubuntu.md" }
+        {"基础" = "Linux/基础.md"},
+        {"包管理" = "Linux/包管理.md"},
+        {"文件系统" = "Linux/文件系统.md"},
+        {"权限" = "Linux/权限.md"},
+        {"进程" = "Linux/进程.md"},
+        {"美化" = "Linux/美化.md"},
+        {"Arch Linux" = "Linux/Arch Linux.md"},
+        {"Termux" = "Linux/Termux.md"},
+        {"Ubuntu" = "Linux/Ubuntu.md"}
+    ]},
+    {"网络" = [
+        {"网络基础" = "网络/网络基础.md"},
+        {"网络连接" = "网络/网络连接.md"},
+        {"代理" = "网络/代理.md"},
+        {"VPN" = "网络/VPN.md"},
+        {"P2P" = "网络/P2P.md"},
+        {"WOL" = "网络/WOL.md"}
+    ]},
+    {"安全" = [
+        {"设备识别与认证" = "安全/设备识别与认证.md"},
+        {"网络认证" = "安全/网络认证.md"},
+        {"网络安全" = "安全/网络安全.md"}
+    ]},
+    {"Git" = [
+        {"基础" = "Git/基础.md"},
+        {"网络配置" = "Git/网络配置.md"},
+        {"gitignore" = "Git/gitignore.md"}
+    ]},
+    {"Python" = [
+        {"函数" = "Python/函数.md"},
+        {"库" = "Python/库.md"},
+        {"数据结构" = "Python/数据结构.md"},
+        {"面向对象" = "Python/面向对象.md"},
+        {"调试" = "Python/调试.md"},
+        {"杂项" = "Python/杂项.md"}
     ]},
     {"OI" = [
-        { "递归" = "OI/递归.md" },
-        { "时间复杂度" = "OI/时间复杂度.md" },
-        { "搜索" = "OI/搜索.md" }
-    ]},
-    {"Web3" = [
-        { "币" = "Web3/币.md" },
-        { "钱包" = "Web3/钱包.md" },
-        { "区块链" = "Web3/区块链.md" },
-        { "网络" = "Web3/网络.md" },
-        { "U卡" = "Web3/U卡.md" }
-    ]},
-    {"BME" = [
-        { "信号处理" = "BME/信号处理.md" },
-        { "CT图像重建" = "BME/CT图像重建.md" },
-        { "光" = "BME/光.md" }
-    ]},
-    {"EE" = [
-        { "无线电" = "EE/无线电.md" },
-        { "数字音频" = "EE/数字音频.md" },
-        { "嵌入式" = "EE/嵌入式.md" },
-        { "近场通讯" = "EE/近场通讯.md" }
+        {"递归" = "OI/递归.md"},
+        {"时间复杂度" = "OI/时间复杂度.md"},
+        {"搜索" = "OI/搜索.md"}
     ]},
     {"前端" = [
-        { "HTML" = "前端/HTML.md" },
-        { "CSS" = "前端/CSS.md" },
-        { "JavaScript" = "前端/JavaScript.md" },
-        { "TypeScript" = "前端/TypeScript.md" },
-        { "React" = "前端/React.md" },
-        { "Next.js" = "前端/Next.js.md" },
-        { "Tailwind CSS" = "前端/Tailwind CSS.md" },
-        { "前端工程化" = "前端/前端工程化.md" }
+        {"HTML" = "前端/HTML.md"},
+        {"CSS" = "前端/CSS.md"},
+        {"JavaScript" = "前端/JavaScript.md"},
+        {"TypeScript" = "前端/TypeScript.md"},
+        {"React" = "前端/React.md"},
+        {"Next.js" = "前端/Next.js.md"},
+        {"Tailwind CSS" = "前端/Tailwind CSS.md"},
+        {"前端工程化" = "前端/前端工程化.md"}
+    ]},
+    {"云" = [
+        {"SSH" = "云/SSH.md"},
+        {"搭建代理" = "云/搭建代理.md"},
+        {"文件传输" = "云/文件传输.md"},
+        {"Azure" = "云/Azure.md"},
+        {"Cloudflare" = "云/Cloudflare.md"}
+    ]},
+    {"AI" = [
+        {"提示词工程" = "AI/提示词工程.md"},
+        {"CLI工具" = "AI/CLI工具.md"},
+        {"AI IDE" = "AI/AI IDE.md"},
+        {"VSCode扩展" = "AI/VSCode扩展.md"},
+        {"反代与API统一管理" = "AI/反代与API统一管理.md"},
+        {"MCP" = "AI/MCP.md"},
+        {"Skills" = "AI/Skills.md"},
+        {"知识" = "AI/知识.md"},
+        {"梯度下降" = "AI/梯度下降.md"},
+        {"神经网络" = "AI/神经网络.md"},
+        {"深度学习" = "AI/深度学习.md"}
+    ]},
+    {"具身智能" = [
+        {"ROS" = "具身智能/ROS.md"}
+    ]},
+    {"EE" = [
+        {"无线电" = "EE/无线电.md"},
+        {"数字音频" = "EE/数字音频.md"},
+        {"嵌入式" = "EE/嵌入式.md"},
+        {"近场通讯" = "EE/近场通讯.md"}
+    ]},
+    {"BME" = [
+        {"信号处理" = "BME/信号处理.md"},
+        {"CT图像重建" = "BME/CT图像重建.md"}
     ]},
     {"CADD" = [
-        { "文献阅读" = "CADD/文献阅读.md" },
-        { "[Curr Comput Aided Drug Des] Molecular docking: a powerful approach for structure-based drug discovery" = "CADD/[Curr Comput Aided Drug Des] Molecular docking: a powerful approach for structure-based drug discovery.md" },
-        { "RDKit" = "CADD/RDKit.md" },
-        { "SMILES" = "CADD/SMILES.md" },
-        { "[Pharmaceuticals] Computer-Aided Drug Design and Drug Discovery：A Prospective Analysis" = "CADD/[Pharmaceuticals] Computer-Aided Drug Design and Drug Discovery：A Prospective Analysis.md" },
-        { "[ICLR26] PepbenchMark 复现" = "CADD/[ICLR26] PepbenchMark 复现.md" }
+        {"文献阅读" = "CADD/文献阅读.md"},
+        {"RDKit" = "CADD/RDKit.md"},
+        {"SMILES" = "CADD/SMILES.md"},
+        {"[Pharmaceuticals] Computer-Aided Drug Design and Drug Discovery：A Prospective Analysis" = "CADD/[Pharmaceuticals] Computer-Aided Drug Design and Drug Discovery：A Prospective Analysis.md"},
+        {"[ICLR26] PepbenchMark 复现" = "CADD/[ICLR26] PepbenchMark 复现.md"},
+        {"[Curr Comput Aided Drug Des] Molecular docking_ a powerful approach for structure-based drug discovery" = "CADD/[Curr Comput Aided Drug Des] Molecular docking_ a powerful approach for structure-based drug discovery.md"}
+    ]},
+    {"Web3" = [
+        {"币" = "Web3/币.md"},
+        {"钱包" = "Web3/钱包.md"},
+        {"区块链" = "Web3/区块链.md"},
+        {"网络" = "Web3/网络.md"},
+        {"U卡" = "Web3/U卡.md"}
+    ]},
+    {"Latex" = [
+        {"基础" = "Latex/基础.md"},
+        {"图片" = "Latex/图片.md"},
+        {"引用" = "Latex/引用.md"}
+    ]},
+    {"Lisp" = [
+        {"Scheme" = "Lisp/Scheme.md"}
     ]}
-
 ]
+
 
 [project.theme]
 language = "zh"
