@@ -1,7 +1,5 @@
 # Next.js
 
-## 简介
-
 Next.js 是基于 React 的全栈框架，由 Vercel 开发。核心特性：
 
 - 文件系统路由
@@ -50,6 +48,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 ## Server Components vs Client Components
 
+Server Component的意思是，这段代码只在服务器上运行一次，生成好 HTML 之后直接发给浏览器，浏览器收到的是已经画好的成品，不需要再自己跑这段代码。
+
 ```tsx
 // Server Component（默认）— 可直接访问数据库、文件系统
 async function UserList() {
@@ -67,27 +67,48 @@ export function Counter() {
 }
 ```
 
-规则：Server Component 可以包含 Client Component，反之不行（Client Component 的子组件自动变为 Client）。
+但是，服务器只能生成静态的 HTML，它没法处理用户交互。比如点击、实时联想等，都必须要在浏览器里实时运行代码才能做到，服务器生成一次 HTML 之后是没法响应后续点击的。这时候就需要`use client`，如果某个组件需要上面这些交互功能，你就在这个文件最顶部写一行`use client`，告诉 Next.js 这个组件是 Client Component，它需要在浏览器里运行。
 
-## 数据获取
+## 数据获取（跨域）
 
-```tsx
-// Server Component 中直接 fetch（自动缓存）
-async function Posts() {
-    const res = await fetch('https://api.example.com/posts', {
-        next: { revalidate: 3600 } // ISR: 每小时重新生成
-    });
-    const posts = await res.json();
-    return <PostList posts={posts} />;
-}
+页面显示出来之后，通常还需要**动态数据**，比如：
 
-// Server Action（表单提交）
-"use server";
-async function createPost(formData: FormData) {
-    const title = formData.get("title") as string;
-    await db.post.create({ data: { title } });
+- 文章列表（可能会更新，不能写死在 HTML 里）
+- 点赞数、评论数（实时变化）
+- 用户登录状态
+
+页背后的 JS 代码**主动发一个请求**去问服务器要数据，这个动作术语叫 **API 请求**（也叫 "fetch 数据"、"调接口"）。浏览器有个安全规则：**网页所在的域名/端口，和它请求的接口的域名/端口，如果不一样，浏览器默认会拦截这个请求**，防止恶意网站偷偷读取你在别的网站上的数据。
+
+```typescript
+async rewrites() {
+  return [
+    {
+      source: "/api/:path*",
+      destination: "http://localhost:8000/api/:path*",
+    },
+  ];
 }
 ```
+
+流程图：
+
+```
+浏览器  --请求 /api/v1/articles-->  Next.js服务器(3000)
+                                        |
+                                        | Next.js 在服务器内部转发
+                                        ↓
+                                  后端服务器(8000)
+                                        |
+                                        | 返回文章数据
+                                        ↓
+                                  Next.js服务器
+                                        |
+                                        | 把数据原样传回
+                                        ↓
+浏览器  <--拿到数据，没有跨域问题-------
+```
+
+关键点：**浏览器全程只跟 3000 端口打交道，完全不知道背后还转发去了 8000 端口**。转发这一步是在服务器之间悄悄完成的，服务器和服务器之间互相请求，不受浏览器跨域规则限制（跨域限制只针对浏览器）。
 
 ## 动态路由与路由组
 
