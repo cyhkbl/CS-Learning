@@ -159,18 +159,14 @@ features = [
 [[project.theme.palette]]
 media = "(prefers-color-scheme: light)"
 scheme = "default"
-palette.primary = "pink"
-palette.accent = "pink"
-toggle.icon = "lucide/sun"
-toggle.name = "Switch to dark mode"
+primary = "pink"
+accent = "pink"
 
 [[project.theme.palette]]
 media = "(prefers-color-scheme: dark)"
 scheme = "slate"
-palette.primary = "purple"
-palette.accent = "purple"
-toggle.icon = "lucide/moon"
-toggle.name = "Switch to light mode"
+primary = "purple"
+accent = "purple"
 
 [project.theme.font]
 text = "Noto Serif SC"
