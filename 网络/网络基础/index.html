@@ -1,0 +1,3530 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="空白棱的CS学习笔记">
+      
+      
+        <meta name="author" content="空白棱">
+      
+      
+        <link rel="canonical" href="https://cyhkbl.qzz.io/CS-Learning/%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
+      
+      
+      
+        <link rel="prev" href="../../Linux/Ubuntu/">
+      
+      
+        <link rel="next" href="../%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../avatar_without_background.png">
+      <meta name="generator" content="zensical-0.1.2">
+    
+    
+      
+        <title>网络基础 - Blank's CS Learning</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.ebb7f775.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300i,400,400i,500,500i,700,700i%7CJetbrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Noto Serif SC";--md-code-font:"Jetbrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        跳转至
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Blank&#x27;s CS Learning" class="md-header__button md-logo" aria-label="Blank's CS Learning" data-md-component="logo">
+      
+  <img src="../../avatar_without_background.png" alt="Blank's CS Learning">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">导航栏</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Blank's CS Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              网络基础
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">查找</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="查找">
+  <button type="button" class="md-search__button">
+    查找
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/cyhkbl/CS-Learning" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E7%8E%AF%E5%A2%83/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-tabs__link">
+          
+  
+  环境
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Linux/%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  Linux
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="././" class="md-tabs__link">
+          
+  
+  网络
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E5%AE%89%E5%85%A8/%E8%AE%BE%E5%A4%87%E8%AF%86%E5%88%AB%E4%B8%8E%E8%AE%A4%E8%AF%81/" class="md-tabs__link">
+          
+  
+  安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Git/%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  Git
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Python/%E5%87%BD%E6%95%B0/" class="md-tabs__link">
+          
+  
+  Python
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../OI/%E9%80%92%E5%BD%92/" class="md-tabs__link">
+          
+  
+  OI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E5%89%8D%E7%AB%AF/HTML/" class="md-tabs__link">
+          
+  
+  前端
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E4%BA%91/SSH/" class="md-tabs__link">
+          
+  
+  云
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../AI/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/" class="md-tabs__link">
+          
+  
+  AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/ROS/" class="md-tabs__link">
+          
+  
+  具身智能
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../EE/%E6%97%A0%E7%BA%BF%E7%94%B5/" class="md-tabs__link">
+          
+  
+  EE
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BME/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" class="md-tabs__link">
+          
+  
+  BME
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../CADD/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" class="md-tabs__link">
+          
+  
+  CADD
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Web3/%E5%B8%81/" class="md-tabs__link">
+          
+  
+  Web3
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Latex/%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  Latex
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Lisp/Scheme/" class="md-tabs__link">
+          
+  
+  Lisp
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Blank&#x27;s CS Learning" class="md-nav__button md-logo" aria-label="Blank's CS Learning" data-md-component="logo">
+      
+  <img src="../../avatar_without_background.png" alt="Blank's CS Learning">
+
+    </a>
+    Blank's CS Learning
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cyhkbl/CS-Learning" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  主页
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../%E7%8E%AF%E5%A2%83/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  环境
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../Linux/%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Linux
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  网络
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  网络
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  网络基础
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  网络基础
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        有线网
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        无线网
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        网络配置
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="网络配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Windows
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        macOS / Linux
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#androidios" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Android/iOS
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        关键字段说明
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        网关
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="网关">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        光猫桥接(Bridge)：光猫不是网关
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#router" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        光猫作为路由(Router)：光猫是网关
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        查看当前局域网网关参数
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="查看当前局域网网关参数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        网关 IP
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        网关 MAC 地址
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        虚拟网关
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        网关名称 / 设备名
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        子网掩码
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        IP地址
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IP地址">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ipv4" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        IPv4
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IPv4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rfc1918" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        局域网（RFC1918 私网段）
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arp" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ARP
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        IPv6
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IPv6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        局域网
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        连接
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        NAT
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NAT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nat_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        改善NAT类型
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cgnat" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        CGNAT
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        localhost
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        网络层级
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="网络层级">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        应用层 (Application Layer)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="应用层 (Application Layer)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        HTTP
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#https" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        HTTPS
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transport-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        传输层 (Transport Layer)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        网络层 (Network Layer)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-physical-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        链路层与物理层 (Link &amp; Physical Layer)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  网络连接
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%BB%A3%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  代理
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VPN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  VPN
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2P/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  P2P
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WOL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WOL
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../%E5%AE%89%E5%85%A8/%E8%AE%BE%E5%A4%87%E8%AF%86%E5%88%AB%E4%B8%8E%E8%AE%A4%E8%AF%81/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  安全
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../Git/%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Git
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../Python/%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Python
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../OI/%E9%80%92%E5%BD%92/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OI
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../%E5%89%8D%E7%AB%AF/HTML/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  前端
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../%E4%BA%91/SSH/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  云
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../AI/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  AI
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/ROS/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  具身智能
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../EE/%E6%97%A0%E7%BA%BF%E7%94%B5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  EE
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../BME/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  BME
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../CADD/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CADD
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../Web3/%E5%B8%81/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Web3
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../Latex/%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Latex
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../Lisp/Scheme/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Lisp
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        有线网
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        无线网
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        网络配置
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="网络配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Windows
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        macOS / Linux
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#androidios" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Android/iOS
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        关键字段说明
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        网关
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="网关">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        光猫桥接(Bridge)：光猫不是网关
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#router" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        光猫作为路由(Router)：光猫是网关
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        查看当前局域网网关参数
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="查看当前局域网网关参数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        网关 IP
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        网关 MAC 地址
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        虚拟网关
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        网关名称 / 设备名
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        子网掩码
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        IP地址
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IP地址">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ipv4" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        IPv4
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IPv4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rfc1918" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        局域网（RFC1918 私网段）
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arp" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ARP
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        IPv6
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IPv6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        局域网
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        连接
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        NAT
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NAT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nat_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        改善NAT类型
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cgnat" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        CGNAT
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        localhost
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        网络层级
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="网络层级">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        应用层 (Application Layer)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="应用层 (Application Layer)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        HTTP
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#https" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        HTTPS
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transport-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        传输层 (Transport Layer)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        网络层 (Network Layer)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-physical-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        链路层与物理层 (Link &amp; Physical Layer)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="导航栏" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    主页
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="././" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    网络
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+  
+    <a href="https://github.com/cyhkbl/CS-Learning/edit/master/docs/网络/网络基础.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-file-pen" viewBox="0 0 24 24"><path d="M12.659 22H18a2 2 0 0 0 2-2V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v9.34"/><path d="M14 2v5a1 1 0 0 0 1 1h5M10.378 12.622a1 1 0 0 1 3 3.003L8.36 20.637a2 2 0 0 1-.854.506l-2.867.837a.5.5 0 0 1-.62-.62l.836-2.869a2 2 0 0 1 .506-.853z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/cyhkbl/CS-Learning/raw/master/docs/网络/网络基础.md" title="查看本页的源代码" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-file-code-2" viewBox="0 0 24 24"><path d="M4 12.15V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.706.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2h-3.35"/><path d="M14 2v5a1 1 0 0 0 1 1h5M5 16l-3 3 3 3M9 22l3-3-3-3"/></svg>
+    </a>
+  
+
+
+<h1 id="_1">网络基础<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">有线网<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>通过网线（以太网）或光纤连接到互联网的物理网络。可以通过物理接入窃听。</p>
+<h2 id="_3">无线网<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>通过2.4GHz/5GHz频段的无线电波连接到互联网的网络。信号在空中传播，容易被监听。</p>
+<h2 id="_4">网络配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
+<p>输入命令：</p>
+<div class="language-pwsh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">ipconfig</span>
+</span></code></pre></div>
+<h3 id="macos-linux">macOS / Linux<a class="headerlink" href="#macos-linux" title="Permanent link">&para;</a></h3>
+<p>输入命令：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ifconfig
+</span></code></pre></div>
+<h3 id="androidios">Android/iOS<a class="headerlink" href="#androidios" title="Permanent link">&para;</a></h3>
+<p>进入“设置” → “网络和互联网” → “Wi-Fi” → 选择已连接的网络 → 查看“高级”信息。</p>
+<h3 id="_5">关键字段说明<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>以太网：有线网卡</p>
+<p>蓝牙网络连接：蓝牙 PAN 网络</p>
+<p>本地连接：通常是虚拟 Wi-Fi 适配器（例如 Wi-Fi Direct / 移动热点等）。</p>
+<p>无线局域网适配器 WLAN：无线网卡</p>
+<p>临时 IPv6 地址：为隐私设计的临时地址（会轮换），用于对外连接时减少被追踪。</p>
+<p>本地链接 IPv6 地址：只在本链路有效（同一个二层网络里），不能跨路由。</p>
+<h2 id="_6">网关<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>网关是内网通往互联网的出口。在家用网络里，它通常做这些事：</p>
+<ul>
+<li><strong>路由转发：</strong>：把内网设备（手机/电脑）发出的数据，转发到互联网</li>
+<li>**NAT：**把内网私有 IP（比如 192.168.x.x）转换成公网出口</li>
+<li><strong>DHCP</strong>：给内网设备自动分配 IP、网关、DNS</li>
+<li>有时还会做防火墙、端口转发等</li>
+</ul>
+<p>在电脑上看到的默认网关地址一般是 <strong>192.168.1.1 / 192.168.0.1</strong> 。这个地址是网络出口设备的内网地址。</p>
+<h3 id="bridge">光猫桥接(Bridge)：光猫不是网关<a class="headerlink" href="#bridge" title="Permanent link">&para;</a></h3>
+<ul>
+<li>光猫只负责光电转换</li>
+<li>由路由器拨号(PPPoE)并做 NAT/DHCP</li>
+<li>网关是路由器（比如 192.168.1.1）</li>
+</ul>
+<h3 id="router">光猫作为路由(Router)：光猫是网关<a class="headerlink" href="#router" title="Permanent link">&para;</a></h3>
+<ul>
+<li>光猫自己拨号并做 NAT/DHCP</li>
+<li>路由器可能变成“二级路由”或“AP”</li>
+<li>网关是光猫（电脑默认网关会指向光猫的地址）</li>
+</ul>
+<h3 id="_7">查看当前局域网网关参数<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h4 id="ip">网关 IP<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h4>
+<div class="language-pwsh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">ipconfig</span>
+</span></code></pre></div>
+<h4 id="mac">网关 MAC 地址<a class="headerlink" href="#mac" title="Permanent link">&para;</a></h4>
+<div class="language-pwsh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">ping</span> <span class="n">your_gateway_ip</span> <span class="c">#让系统把它写进 ARP 表</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">arp</span> <span class="n">-a</span> <span class="n">your_gateway_ip</span> <span class="c">#查 ARP</span>
+</span></code></pre></div>
+<p>有了 MAC 的前三组（OUI），就能大概率判断厂商（华为/锐捷/TP-Link/小米/思科等）。</p>
+<h4 id="_8">虚拟网关<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p><code>00-00-5E</code> 是标准组织 IANA 分配给一种虚拟路由协议的 MAC 地址空间，用于：</p>
+<p>VRRP（Virtual Router Redundancy Protocol）</p>
+<p>HSRP（思科的类似协议）</p>
+<p>CARP（BSD 的版本）</p>
+<p>这意味着所在网络是大规模企业网/校园网结构，网关可能由两台或多台路由设备组成。</p>
+<h4 id="_9">网关名称 / 设备名<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<div class="language-pwsh highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">nslookup</span> <span class="n">your_gateway_ip</span>
+</span></code></pre></div>
+<p>如果网络有 PTR 记录，可能会返回一个主机名；没有就会失败/返回 Unknown。</p>
+<p>或：</p>
+<div class="language-bat highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ping -a your_gateway_ip
+</span></code></pre></div>
+<p>如果能解析，会显示类似 <code>Pinging router.local [your_gateway_ip]</code>；解析不了就只显示 IP。</p>
+<p>或：
+<div class="language-pwsh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">tracert</span> <span class="n">1</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">1</span>
+</span></code></pre></div></p>
+<p>第一跳通常就是网关（可能显示名字或只显示 IP）。</p>
+<h2 id="_10">子网掩码<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>子网掩码告诉电脑：<strong>哪些位是“网络号”（同一局域网），哪些位是“主机号”（这台设备）</strong>。它用来判断目标 IP 和本机是不是在<strong>同一个子网/局域网</strong>里。</p>
+<p>例如，子网掩码：</p>
+<p><code>255.255.0.0</code> 等价于 <strong>/16</strong>（前 16 位是网络号）。例如，同一子网的范围是：<code>10.196.0.0</code> ~ <code>10.196.255.255</code></p>
+<p><code>255.255.255.0</code> 等价于 <strong>/24</strong>（同网段 256 个地址左右）。</p>
+<p>做按位与（AND）判断两台机器是否同一网段：网络号 = IP 地址 AND 子网掩码</p>
+<p>例如：</p>
+<ul>
+<li><code>10.196.69.101</code> AND <code>255.255.0.0</code> = <code>10.196.0.0</code></li>
+<li>如果另一台是 <code>10.196.8.20</code>
+  <code>10.196.8.20</code> AND <code>255.255.0.0</code> 也是 <code>10.196.0.0</code>
+  → 同网段</li>
+<li>如果另一台是 <code>10.197.8.20</code>
+  AND 后会变成 <code>10.197.0.0</code>
+  → 不同网段，走网关</li>
+</ul>
+<h2 id="ip_1">IP地址<a class="headerlink" href="#ip_1" title="Permanent link">&para;</a></h2>
+<h3 id="ipv4">IPv4<a class="headerlink" href="#ipv4" title="Permanent link">&para;</a></h3>
+<h4 id="rfc1918">局域网（RFC1918 私网段）<a class="headerlink" href="#rfc1918" title="Permanent link">&para;</a></h4>
+<p>10.0.0.0 ~ 10.255.255.255（10/8）</p>
+<p>172.16.0.0 ~ 172.31.255.255（172.16/12）</p>
+<p>192.168.0.0 ~ 192.168.255.255（192.168/16）</p>
+<p>169.254.0.0/16：APIPA 自动地址（没拿到 DHCP 时）</p>
+<p>100.64.0.0/10：运营商 CGNAT 内网（不是局域网，也不是公网）</p>
+<h4 id="arp">ARP<a class="headerlink" href="#arp" title="Permanent link">&para;</a></h4>
+<p>ARP（Address Resolution Protocol，地址解析协议）可以在 <strong>IPv4 局域网</strong> 里把IP 地址翻译成MAC 地址。<strong>ARP 只在同一二层网络/广播域里有效。</strong></p>
+<p>当你的电脑要访问同网段的某个 IPv4 目标：</p>
+<p>如果在同一子网，它需要对方的 <strong>MAC 地址</strong> 才能发以太网帧。</p>
+<ol>
+<li>它会广播一个 <strong>ARP Request</strong>：</li>
+<li>目标主机会回一个 <strong>ARP Reply</strong>：</li>
+<li>电脑把这个映射缓存起来（ARP 缓存/ARP 表），之后一段时间内就不用再问了。</li>
+</ol>
+<p>如果访问的目标 <strong>不在同一子网</strong>：</p>
+<ol>
+<li>电脑不会去 ARP 8.8.8.8（它不在本地局域网，ARP 广播也到不了它）</li>
+<li>它会把包交给 <strong>默认网关</strong></li>
+<li>通过默认网关的IP地址去ARP默认网关的MAC地址</li>
+<li>然后把以太网帧发给网关，由网关帮你转发到外网。</li>
+</ol>
+<h3 id="ipv6">IPv6<a class="headerlink" href="#ipv6" title="Permanent link">&para;</a></h3>
+<h4 id="_11">局域网<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>前缀：</p>
+<p><code>fe80::/10</code> —— <strong>链路本地地址（Link-Local）</strong></p>
+<ul>
+<li>只能在同一个二层网络里用（同一个 Wi-Fi/交换机这一跳）</li>
+<li><strong>一定是“本地/局域网意义上的地址”</strong></li>
+</ul>
+<p><code>fc00::/7</code>（常见 <code>fdxx:</code>）—— <strong>IPv6 私网/ULA（Unique Local Address）</strong></p>
+<ul>
+<li>类似 IPv4 的私网（不应在公网路由）</li>
+<li>类似于<code>fd12:3456:...</code>一般就是“内网 IPv6”。</li>
+</ul>
+<p><code>2000::/3</code> —— <strong>全球单播地址（Global Unicast）公网 IPv6</strong></p>
+<ul>
+<li>大多数公网 IPv6 都在这个范围（2xxx/3xxx 开头）</li>
+<li>你的是：<code>2408:8642:...</code>（2408 开头属于 2000::/3 范围）</li>
+</ul>
+<p><code>::1</code> —— 本机回环（Loopback）</p>
+<ul>
+<li>指本机。</li>
+</ul>
+<h2 id="_12">连接<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>入站连接：外部设备主动向本地设备发起的连接请求</p>
+<ul>
+<li>
+<p><strong>防火墙</strong>：入站连接通常需要<strong>防火墙允许</strong>才能通过（默认情况下，防火墙会阻止所有入站连接，以防止未经授权的外部访问）。</p>
+</li>
+<li>
+<p><strong>安全风险</strong>：入站连接是网络攻击的常见入口（比如黑客扫描开放端口并发起入站连接试图入侵），因此需要谨慎开放入站端口（如仅允许可信IP或应用）。</p>
+</li>
+</ul>
+<p>连接过程：
+1.  公司的电脑（外网）主动向路由器的公网IP（123.123.123.123）的3389端口发起连接。
+2.  路由器检查它的 <strong>NAT连接跟踪表</strong>，发现 <strong>没有任何一条现有记录</strong> 是关于 <code>公网IP:3389</code> 这个端口的。
+3.  路由器不知道这个包应该发给内网的哪个设备。默认情况下，出于安全考虑，路由器的防火墙会 <strong>丢弃这个包</strong>，连接失败。</p>
+<ul>
+<li>端口转发：在路由器上设置一条规则，将外部网络（互联网）对路由器特定端口的访问请求，自动转发到内网中指定设备的指定端口上。</li>
+</ul>
+<p>出站连接：本地设备主动向外部设备发起的连接请求。普通用户正常上网几乎全部是 <strong>“由内网设备主动向外网服务器发起连接”</strong>。</p>
+<p>连接过程：
+1.  <strong>电脑（内网IP，如 192.168.1.100）</strong> 想访问谷歌服务器（公网IP，如 142.250.185.78）。
+2.  电脑生成一个TCP连接请求包。这个包里有：
+    *   <strong>源IP:</strong> 192.168.1.100
+    *   <strong>源端口:</strong> 一个随机的高位端口（比如 54321）
+    *   <strong>目标IP:</strong> 142.250.185.78
+    *   <strong>目标端口:</strong> 80 (HTTP) 或 443 (HTTPS)
+3.  这个包到达路由器。
+4.  <strong>路由器进行NAT转换：</strong>
+    *   它把数据包的 <strong>源IP</strong> 改成路由器自己的 <strong>公网IP</strong>（比如 123.123.123.123）。
+    *   它把数据包的 <strong>源端口</strong> 也改成一个 <strong>随机的外网端口</strong>（比如 65500）。<strong>路由器会记住这个映射关系</strong>
+5.  路由器在自己的 <strong>NAT连接跟踪表</strong> 里创建一条记录：
+    <code>内网IP:内网端口  &lt;--&gt;  公网IP:外网端口  &lt;--&gt;  目标服务器IP:目标端口</code>
+    例如：<code>192.168.1.100:54321  &lt;--&gt;  123.123.123.123:65500  &lt;--&gt;  142.250.185.78:443</code>
+6.  修改后的数据包（源IP:端口 = 123.123.123.123:65500）被发送到互联网，最终到达谷歌服务器。
+7.  响应数据包同理返回电脑。</p>
+<ul>
+<li>
+<p><strong>被动节点</strong>：<strong>不主动产生业务流量</strong>、<strong>不主动发起会话</strong>的实体。它通常<strong>监听</strong>（listen）或<strong>等待</strong>（wait）来自其他节点的请求，然后根据请求进行响应或转发。一般指服务器。</p>
+</li>
+<li>
+<p><strong>主动节点</strong>：主动发起连接、发起查询或主动推送数据。</p>
+</li>
+</ul>
+<h2 id="nat">NAT<a class="headerlink" href="#nat" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>NAT（网络地址转换）是路由器将内网私有IP转换为公网IP的技术。</p>
+</blockquote>
+<p><strong>NAT Type 1（Open / Direct）</strong>
+- 设备直接获取公网IP，无NAT
+- 连接成功率：100%</p>
+<p><strong>NAT Type 2（Moderate）</strong>
+- 特点：有防火墙但端口有限制
+- 连接成功率：较高</p>
+<p><strong>NAT Type 3（Strict）</strong>
+- 特点：严格NAT，需手动配置端口映射
+- 连接成功率：中等</p>
+<p><strong>NAT Type 4（Symmetric）</strong>
+- 特点：每次连接分配不同端口
+- 连接成功率：最低</p>
+<h3 id="nat_1">改善NAT类型<a class="headerlink" href="#nat_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>UPnP（通用即插即用）</strong>：客户端自动在路由器上创建端口映射</p>
+</li>
+<li>
+<p><strong>NAT-PMP（苹果的端口映射协议）</strong>：与UPnP类似，但更轻量级</p>
+</li>
+<li>
+<p><strong>手动端口映射</strong>：登录路由器管理界面，手动设置端口转发规则</p>
+</li>
+<li>
+<p><strong>DMZ（非军事区）</strong>：将设备完全暴露在公网，不推荐使用</p>
+</li>
+</ul>
+<h3 id="cgnat">CGNAT<a class="headerlink" href="#cgnat" title="Permanent link">&para;</a></h3>
+<p><strong>运营商级网络地址转换</strong>。运营商（移动、联通、电信等）因为IPv4地址枯竭，在其网络内部又做了一层NAT。路由器获取到的WAN口IP地址（在路由器管理页面看到的外网IP）是一个<strong>内网IP</strong>（通常是 <code>100.64.x.x</code> 到 <code>100.127.x.x</code> 或 <code>10.x.x.x</code>），而不是全球唯一的公网IP。</p>
+<p><strong>如何判断自己是否在CGNAT下？</strong></p>
+<ol>
+<li><strong>查看路由器WAN口IP</strong>：登录路由器管理界面，找到“网络状态”或“WAN口信息”，记下IP地址。</li>
+<li><strong>与公网IP对比</strong>：用手机或电脑直接访问 <code>ip138.com</code> 或 <code>whatismyip.com</code>，查看你当前的公网IP。</li>
+<li><strong>如果两个IP地址一致</strong>：恭喜，你有<strong>公网IP</strong>（但可能仍需端口转发）。<strong>如果两个IP地址完全不同</strong>，且路由器WAN口IP是 <code>100.64.x.x</code>， <code>10.x.x.x</code>， <code>172.16.x.x</code> ~ <code>172.31.x.x</code>， <code>192.168.x.x</code> 这些范围内的任何一个：那么你<strong>极有可能</strong>处于CGNAT之下。</li>
+</ol>
+<p><strong>CGNAT的影响：</strong>
+这是比家庭路由器NAT更严重的一层障碍。<strong>即使你在自家路由器上做了完美的端口转发，外面来的连接请求也会被运营商的CGNAT设备挡住，无法到达你的路由器。</strong> 这是目前很多移动宽带用户BT下载慢的主要原因。</p>
+<h2 id="localhost">localhost<a class="headerlink" href="#localhost" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>localhost</strong> 是计算机在网络中对自己的一种称呼，意思是“本机”或“本地主机”。</p>
+</blockquote>
+<p><code>localhost</code> 是一个域名，它对应的 IP 地址通常是 <code>127.0.0.1</code>（在 IPv4 标准下）或 <code>::1</code>（在 IPv6 标准下）。当向 localhost 发送数据时，数据包通常<strong>不会</strong>经过物理网卡（网线或 Wi-Fi），也不会传输到外部网络。操作系统会在内部直接把数据“回环”拦截下来，送回给本机。</p>
+<ul>
+<li><strong>Loopback Interface（回环接口）：</strong> 这是一个虚拟的网络接口。即便电脑拔掉了网线、断开了 Wi-Fi，这个接口依然存在且能工作。</li>
+</ul>
+<h2 id="_13">网络层级<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>每一层都为上一层提供服务，并对数据进行“打包”。</p>
+</blockquote>
+<h3 id="application-layer">应用层 (Application Layer)<a class="headerlink" href="#application-layer" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>协议：</strong> HTTP, HTTPS, FTP, DNS</li>
+<li><strong>功能：</strong> 产生数据。比如浏览器发起一个 <code>GET /</code> 请求。</li>
+<li><strong>作用服务：</strong> 环境变量中设置的<code>HTTPS_PROXY</code> 就作用在这一层。它直接修改了程序的行为，让程序不再直接找目标地址，而是打包好数据发给代理地址。</li>
+</ul>
+<h4 id="http">HTTP<a class="headerlink" href="#http" title="Permanent link">&para;</a></h4>
+<p>用HTTP协议访问服务器时，默认访问80端口。</p>
+<h4 id="https">HTTPS<a class="headerlink" href="#https" title="Permanent link">&para;</a></h4>
+<p>用HTTPS协议访问服务器时，默认访问443端口。</p>
+<h3 id="transport-layer">传输层 (Transport Layer)<a class="headerlink" href="#transport-layer" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>代表协议：</strong> TCP, UDP</li>
+<li><strong>功能：</strong> 负责建立连接（三次握手）。它只关心 <strong>端口号 (Port)</strong>。</li>
+</ul>
+<h3 id="network-layer">网络层 (Network Layer)<a class="headerlink" href="#network-layer" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>代表协议：</strong> IP (IPv4, IPv6), ICMP</li>
+<li><strong>功能：</strong> 负责路由，决定数据包往哪个 <strong>IP 地址</strong> 走。</li>
+<li><strong>作用服务：</strong> <code>localhost</code> 触发了系统的<strong>回环驱动</strong>，数据包直接在内核里原地调头，不发往物理线路。</li>
+</ul>
+<h3 id="link-physical-layer">链路层与物理层 (Link &amp; Physical Layer)<a class="headerlink" href="#link-physical-layer" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>硬件：</strong> 网卡、网线、Wi-Fi 信号。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../../Linux/Ubuntu/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Ubuntu">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Ubuntu
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5/" class="md-footer__link md-footer__link--next" aria-label="下一页: 网络连接">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                网络连接
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 空白棱
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      
+<div class="md-progress" data-md-component="progress" role="progressbar" aria-label="Loading"></div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["announce.dismiss","content.action.edit","content.action.view","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","header.autohide","navigation.expand","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.instant.progress","navigation.path","navigation.prune","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","search.suggest","toc.follow"],"redirect":null,"search":"../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","clipboard.error":"Could not copy to clipboard","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3cb411a8.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2879 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="空白棱的CS学习笔记">
+      
+      
+        <meta name="author" content="空白棱">
+      
+      
+        <link rel="canonical" href="https://cyhkbl.qzz.io/CS-Learning/CADD/%5BPharmaceuticals%5D%20Computer-Aided%20Drug%20Design%20and%20Drug%20Discovery%EF%BC%9AA%20Prospective%20Analysis/">
+      
+      
+      
+        <link rel="prev" href="../SMILES/">
+      
+      
+        <link rel="next" href="../%5BICLR26%5D%20PepbenchMark%20%E5%A4%8D%E7%8E%B0/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../avatar_without_background.png">
+      <meta name="generator" content="zensical-0.1.2">
+    
+    
+      
+        <title>[Pharmaceuticals] Computer-Aided Drug Design and Drug Discovery：A Prospective Analysis - Blank's CS Learning</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.ebb7f775.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300i,400,400i,500,500i,700,700i%7CJetbrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Noto Serif SC";--md-code-font:"Jetbrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        跳转至
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Blank&#x27;s CS Learning" class="md-header__button md-logo" aria-label="Blank's CS Learning" data-md-component="logo">
+      
+  <img src="../../avatar_without_background.png" alt="Blank's CS Learning">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">导航栏</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Blank's CS Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [Pharmaceuticals] Computer-Aided Drug Design and Drug Discovery：A Prospective Analysis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">查找</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="查找">
+  <button type="button" class="md-search__button">
+    查找
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/cyhkbl/CS-Learning" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E7%8E%AF%E5%A2%83/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-tabs__link">
+          
+  
+  环境
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Linux/%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  Linux
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  网络
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E5%AE%89%E5%85%A8/%E8%AE%BE%E5%A4%87%E8%AF%86%E5%88%AB%E4%B8%8E%E8%AE%A4%E8%AF%81/" class="md-tabs__link">
+          
+  
+  安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Git/%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  Git
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Python/%E5%87%BD%E6%95%B0/" class="md-tabs__link">
+          
+  
+  Python
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../OI/%E9%80%92%E5%BD%92/" class="md-tabs__link">
+          
+  
+  OI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E5%89%8D%E7%AB%AF/HTML/" class="md-tabs__link">
+          
+  
+  前端
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E4%BA%91/SSH/" class="md-tabs__link">
+          
+  
+  云
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../AI/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/" class="md-tabs__link">
+          
+  
+  AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/ROS/" class="md-tabs__link">
+          
+  
+  具身智能
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../EE/%E6%97%A0%E7%BA%BF%E7%94%B5/" class="md-tabs__link">
+          
+  
+  EE
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BME/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" class="md-tabs__link">
+          
+  
+  BME
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" class="md-tabs__link">
+          
+  
+  CADD
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Web3/%E5%B8%81/" class="md-tabs__link">
+          
+  
+  Web3
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Latex/%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  Latex
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Lisp/Scheme/" class="md-tabs__link">
+          
+  
+  Lisp
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Blank&#x27;s CS Learning" class="md-nav__button md-logo" aria-label="Blank's CS Learning" data-md-component="logo">
+      
+  <img src="../../avatar_without_background.png" alt="Blank's CS Learning">
+
+    </a>
+    Blank's CS Learning
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cyhkbl/CS-Learning" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  主页
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../%E7%8E%AF%E5%A2%83/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  环境
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../Linux/%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Linux
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  网络
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../%E5%AE%89%E5%85%A8/%E8%AE%BE%E5%A4%87%E8%AF%86%E5%88%AB%E4%B8%8E%E8%AE%A4%E8%AF%81/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  安全
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../Git/%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Git
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../Python/%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Python
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../OI/%E9%80%92%E5%BD%92/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OI
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../%E5%89%8D%E7%AB%AF/HTML/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  前端
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../%E4%BA%91/SSH/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  云
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../AI/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  AI
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/ROS/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  具身智能
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../EE/%E6%97%A0%E7%BA%BF%E7%94%B5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  EE
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../BME/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  BME
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CADD
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_15">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  CADD
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  文献阅读
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RDKit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  RDKit
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SMILES/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  SMILES
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  [Pharmaceuticals] Computer-Aided Drug Design and Drug Discovery：A Prospective Analysis
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  [Pharmaceuticals] Computer-Aided Drug Design and Drug Discovery：A Prospective Analysis
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#structure-based-drug-design-sbdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        基于结构的药物设计（Structure-Based Drug Design, SBDD）
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ligand-based-drug-design-lbdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        基于配体的药物设计（Ligand-Based Drug Design, LBDD）
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lipinski" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Lipinski 五规则
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#molecular-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        分子建模（Molecular Modeling）
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docking-and-virtual-screening" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        分子对接与虚拟筛选（Docking and Virtual Screening）
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qsar" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        定量构效关系（QSAR）
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pharmacophore-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        药效团建模（Pharmacophore Modeling）
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dmpk" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        药物代谢与药代动力学预测（DMPK）
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-novo-drug-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        从头药物设计（De Novo Drug Design）
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        机器学习
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="机器学习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        药物-药物相互作用预测
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drug-repurposing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        药物再利用（Drug Repurposing）
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gans" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        药物设计中的生成对抗网络（GANs）
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        预测毒理学
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        多组学数据的整合
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cadd" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        将实验数据与 CADD 融合
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%5BICLR26%5D%20PepbenchMark%20%E5%A4%8D%E7%8E%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  [ICLR26] PepbenchMark 复现
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%5BCurr%20Comput%20Aided%20Drug%20Des%5D%20Molecular%20docking_%20a%20powerful%20approach%20for%20structure-based%20drug%20discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  [Curr Comput Aided Drug Des] Molecular docking_ a powerful approach for structure-based drug discovery
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../Web3/%E5%B8%81/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Web3
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../Latex/%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Latex
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../Lisp/Scheme/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Lisp
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#structure-based-drug-design-sbdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        基于结构的药物设计（Structure-Based Drug Design, SBDD）
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ligand-based-drug-design-lbdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        基于配体的药物设计（Ligand-Based Drug Design, LBDD）
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lipinski" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Lipinski 五规则
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#molecular-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        分子建模（Molecular Modeling）
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docking-and-virtual-screening" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        分子对接与虚拟筛选（Docking and Virtual Screening）
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qsar" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        定量构效关系（QSAR）
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pharmacophore-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        药效团建模（Pharmacophore Modeling）
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dmpk" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        药物代谢与药代动力学预测（DMPK）
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-novo-drug-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        从头药物设计（De Novo Drug Design）
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        机器学习
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="机器学习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        药物-药物相互作用预测
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drug-repurposing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        药物再利用（Drug Repurposing）
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gans" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        药物设计中的生成对抗网络（GANs）
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        预测毒理学
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        多组学数据的整合
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cadd" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        将实验数据与 CADD 融合
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="导航栏" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    主页
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    CADD
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+  
+    <a href="https://github.com/cyhkbl/CS-Learning/edit/master/docs/CADD/[Pharmaceuticals] Computer-Aided Drug Design and Drug Discovery：A Prospective Analysis.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-file-pen" viewBox="0 0 24 24"><path d="M12.659 22H18a2 2 0 0 0 2-2V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v9.34"/><path d="M14 2v5a1 1 0 0 0 1 1h5M10.378 12.622a1 1 0 0 1 3 3.003L8.36 20.637a2 2 0 0 1-.854.506l-2.867.837a.5.5 0 0 1-.62-.62l.836-2.869a2 2 0 0 1 .506-.853z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/cyhkbl/CS-Learning/raw/master/docs/CADD/[Pharmaceuticals] Computer-Aided Drug Design and Drug Discovery：A Prospective Analysis.md" title="查看本页的源代码" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-file-code-2" viewBox="0 0 24 24"><path d="M4 12.15V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.706.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2h-3.35"/><path d="M14 2v5a1 1 0 0 0 1 1h5M5 16l-3 3 3 3M9 22l3-3-3-3"/></svg>
+    </a>
+  
+
+
+<h1 id="pharmaceuticals-computer-aided-drug-design-and-drug-discoverya-prospective-analysis">[Pharmaceuticals] Computer-Aided Drug Design and Drug Discovery：A Prospective Analysis<a class="headerlink" href="#pharmaceuticals-computer-aided-drug-design-and-drug-discoverya-prospective-analysis" title="Permanent link">&para;</a></h1>
+<iframe 
+    src="../../../Files/[Pharmaceuticals] Computer-Aided Drug Design and Drug Discovery: A Prospective Analysis.pdf" 
+    width="100%" 
+    height="600px" 
+    style="border: none;">
+</iframe>
+
+<h2 id="structure-based-drug-design-sbdd">基于结构的药物设计（Structure-Based Drug Design, SBDD）<a class="headerlink" href="#structure-based-drug-design-sbdd" title="Permanent link">&para;</a></h2>
+<p>SBDD 利用生物靶标的三维结构信息，旨在理解潜在药物如何嵌合并与其相互作用。</p>
+<p>流程：
+1. <strong>Virtual Screening</strong> → <strong>虚拟筛选</strong>
+2. <strong>Structure-based Pharmacophore</strong> → <strong>基于结构的药效团</strong>
+3. <strong>Docking &amp; Dynamic Simulations</strong> → <strong>分子对接与动力学模拟</strong>
+4. <strong>De novo design</strong> → <strong>从头设计</strong></p>
+<h2 id="ligand-based-drug-design-lbdd">基于配体的药物设计（Ligand-Based Drug Design, LBDD）<a class="headerlink" href="#ligand-based-drug-design-lbdd" title="Permanent link">&para;</a></h2>
+<p>LBDD 不要求已知靶标结构，而是侧重于已知药物分子及其药理学特征，用以设计新的候选药物。</p>
+<p>流程：
+1. <strong>Ligand-based Pharmacophore</strong> → <strong>基于配体的药效团</strong>
+2. <strong>2D Similarity &amp; 3D QSAR</strong> → <strong>二维相似性与三维QSAR（定量构效关系）</strong>
+3. <strong>Scaffold Hopping</strong> → <strong>骨架跃迁</strong>
+4. <strong>ADMET Prediction</strong> → <strong>ADMET预测</strong></p>
+<h2 id="lipinski">Lipinski 五规则<a class="headerlink" href="#lipinski" title="Permanent link">&para;</a></h2>
+<p>在 CADD 中，遵循 <strong>Lipinski 五规则</strong> 对获得良好的口服成药性至关重要，即理想化合物应尽量减少对分子量、脂溶性、氢键供体和氢键受体等标准的违反。</p>
+<h2 id="molecular-modeling">分子建模（Molecular Modeling）<a class="headerlink" href="#molecular-modeling" title="Permanent link">&para;</a></h2>
+<p>构建分子结构的三维模型，尤其是蛋白质和配体的三维模型。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>程序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>同源建模/比较建模：以同源蛋白已通过实验确认的结构为指导，构建目标蛋白的三维模型。</td>
+<td>MODELLER, SWISS-MODEL, Phyre2, RaptorX, I-TASSER</td>
+</tr>
+<tr>
+<td>从头建模（Ab Initio Modeling）：不使用实验数据，通过采样蛋白构象空间构建目标蛋白三维模型。</td>
+<td>Rosetta, QUARK, AlphaFold, ESMFold, PCONS5</td>
+</tr>
+<tr>
+<td>穿线法（Threading）：将目标蛋白序列与已知结构蛋白序列比对，从而建立三维模型。</td>
+<td>MUSTER, 3D-PSSM, LOMETS, HHpred</td>
+</tr>
+<tr>
+<td>混合建模（Hybrid Modeling）：结合两种或多种建模方法，提高预测结构准确性。</td>
+<td>CABS-flex, PrimeX, GalaxyHomomer</td>
+</tr>
+<tr>
+<td>分子动力学：使用经典力学或量子力学模拟蛋白随时间的行为。</td>
+<td>GROMACS, NAMD, CHARMM</td>
+</tr>
+<tr>
+<td>基于知识的方法：利用现有的蛋白结构和功能知识预测目标蛋白结构。</td>
+<td>ProSMoS, ProQ3D, I-TASSER-2GO</td>
+</tr>
+<tr>
+<td>无模板方法：不使用模板或同源蛋白构建目标蛋白三维模型。</td>
+<td>CONFOLD2, MetaPSICOV, TrRosetta</td>
+</tr>
+<tr>
+<td>片段组装方法：通过组装已知蛋白结构片段建立目标蛋白三维模型。</td>
+<td>PEP-FOLD3, Robetta, QUARK</td>
+</tr>
+</tbody>
+</table>
+<h2 id="docking-and-virtual-screening">分子对接与虚拟筛选（Docking and Virtual Screening）<a class="headerlink" href="#docking-and-virtual-screening" title="Permanent link">&para;</a></h2>
+<p>分子对接是预测药物分子与靶蛋白结合时取向与位置的过程。它估计药物与靶标之间的结合亲和力，而这在药物设计中至关重要。</p>
+<h2 id="qsar">定量构效关系（QSAR）<a class="headerlink" href="#qsar" title="Permanent link">&para;</a></h2>
+<p>QSAR 建模研究分子化学结构与其生物活性之间的关系。通过统计方法，QSAR 模型可以根据新化合物的结构属性预测其药理活性，从而使化学家能够有依据地修改分子结构，以增强药效或减少副作用。</p>
+<h2 id="pharmacophore-modeling">药效团建模（Pharmacophore Modeling）<a class="headerlink" href="#pharmacophore-modeling" title="Permanent link">&para;</a></h2>
+<p>药效团是分子中实现其药理活性所必需关键特征的空间排列。药效团建模是现代药物发现的重要组成部分，其核心在于识别对分子药理活性至关重要的关键分子特征的空间布局。</p>
+<h2 id="dmpk">药物代谢与药代动力学预测（DMPK）<a class="headerlink" href="#dmpk" title="Permanent link">&para;</a></h2>
+<p>药物代谢稳定性、溶解性以及在体内的分布方式（药代动力学）发挥着关键作用。CADD 提供的工具可以预测化合物的 DMPK 性质，使研究人员能够预见并解决与药物代谢、生物利用度及潜在药物-药物相互作用相关的问题。</p>
+<h2 id="de-novo-drug-design">从头药物设计（De Novo Drug Design）<a class="headerlink" href="#de-novo-drug-design" title="Permanent link">&para;</a></h2>
+<p>与通过修饰现有分子的方法不同，从头药物设计是从零开始创造全新的药物分子。这项技术利用计算算法生成符合特定标准的新分子结构，为大量新型候选药物打开了大门</p>
+<h2 id="_1">机器学习<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h4 id="-">药物-药物相互作用预测<a class="headerlink" href="#-" title="Permanent link">&para;</a></h4>
+<p>药物发现中的一项挑战，是理解新药可能如何与患者正在服用的其他药物发生相互作用。机器学习算法能够处理大量已知药物-药物相互作用数据库，从而预测新化合物可能产生的有害组合。</p>
+<h4 id="drug-repurposing">药物再利用（Drug Repurposing）<a class="headerlink" href="#drug-repurposing" title="Permanent link">&para;</a></h4>
+<p>药物再利用是为现有药物寻找新的治疗用途。通过分析海量数据集，机器学习可以识别现有药物的新靶点，从而节省传统药物发现中所需的时间和成本。</p>
+<h4 id="gans">药物设计中的生成对抗网络（GANs）<a class="headerlink" href="#gans" title="Permanent link">&para;</a></h4>
+<p>GAN 是一种人工智能形式，其中两个神经网络——生成器和判别器——协同训练。生成器创建分子结构，而判别器对其进行评估。随着训练推进，生成器会逐渐擅长创建可行且可能具有生物活性的分子结构，这些结构可在实验室中进一步合成和测试。</p>
+<h4 id="_2">预测毒理学<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>候选药物在临床试验中失败的主要原因之一，是未能预见的毒性。机器学习模型能够通过分析历史药物毒性数据来预测潜在不良效应，从而在发现早期剔除潜在有毒化合物。此外，通过利用分子量、脂溶性和电子性质等描述符，QSAR 模型能够通过关联分子结构与其潜在毒性来预测毒理效应。其他描述符，如溶解性、代谢稳定性及毒性基团（toxicophores）的识别，也能提供更全面的见解，从而促进计算毒理学中的早期危害识别与实验测试优先级排序。</p>
+<h2 id="_3">多组学数据的整合<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>疾病状态与药物相互作用背后的生物系统极其复杂，具有多层次调控与相互作用。要全面理解这些系统，必须分析不止一个“组学”层面——包括基因组、转录组、蛋白质组和代谢组等。</p>
+<p>将这些多组学数据整合到 CADD 中，可确保药物发现采取更全面的方法。单一组学研究虽然提供有价值的信息，但只揭示了生物学拼图的一部分。通过结合多个组学层次的数据，研究者能够更全面地理解疾病状态、潜在药物靶点及整体细胞动态。基因组数据能够揭示疾病可能的遗传驱动因素。当其整合进 CADD 时，尤其是在某些具有明确遗传成分的疾病中，如特定癌症，可用于指导药物靶点搜索。</p>
+<p>转录组代表细胞内所有 RNA 分子，反映当前正在被转录的基因。整合转录组数据可以揭示细胞在 mRNA 水平上对药物的可能反应，甚至提示潜在副作用或替代通路。虽然基因和转录本很重要，但蛋白质往往才是药物的直接靶标。蛋白质组数据有助于理解药物-蛋白相互作用、翻译后修饰以及潜在脱靶效应。</p>
+<p>代谢组学，即对生物系统中小分子的研究，可提供药物代谢、其与内源性代谢物相互作用，以及药效和毒性潜在生物标志物等关键信息。除了分别研究单个组学层之外，系统生物学采取了更整合的方法。通过基于多组学数据构建相互作用网络，研究者可以预测药物可能如何影响整个通路或网络，从而对药物作用形成更系统性的理解。虽然每一个“组学”层次都能提供宝贵见解，但它们的联合使用有可能彻底改变 CADD。通过以多组学整合来拥抱生物学的复杂性，药物发现将更接近于更有效、更个体化的治疗解决方案。</p>
+<h2 id="cadd">将实验数据与 CADD 融合<a class="headerlink" href="#cadd" title="Permanent link">&para;</a></h2>
+<p>分子动力学模拟可以预测分子随时间变化的行为，但 X 射线晶体学或核磁共振（NMR）等实验技术则能提供分子的“快照”，从而验证或修正这些模拟。高通量筛选、检测分析及其他实验方法产生了丰富的数据。这些数据可通过 AI 和其他 CADD 工具加以挖掘，从而发现可能被忽略的模式、关系或候选药物。随着实验结果数据库不断增长，CADD 中使用的预测模型也可得到更有效训练。这种整合不断提升 CADD 模型的准确性，使其随时间推移更加可靠。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../SMILES/" class="md-footer__link md-footer__link--prev" aria-label="上一页: SMILES">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                SMILES
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../%5BICLR26%5D%20PepbenchMark%20%E5%A4%8D%E7%8E%B0/" class="md-footer__link md-footer__link--next" aria-label="下一页: [ICLR26] PepbenchMark 复现">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                [ICLR26] PepbenchMark 复现
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 空白棱
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      
+<div class="md-progress" data-md-component="progress" role="progressbar" aria-label="Loading"></div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["announce.dismiss","content.action.edit","content.action.view","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","header.autohide","navigation.expand","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.instant.progress","navigation.path","navigation.prune","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","search.suggest","toc.follow"],"redirect":null,"search":"../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","clipboard.error":"Could not copy to clipboard","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3cb411a8.min.js"></script>
+      
+    
+  </body>
+</html>

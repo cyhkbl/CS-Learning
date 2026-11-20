@@ -1,0 +1,3099 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="空白棱的CS学习笔记">
+      
+      
+        <meta name="author" content="空白棱">
+      
+      
+        <link rel="canonical" href="https://cyhkbl.qzz.io/CS-Learning/EE/%E6%95%B0%E5%AD%97%E9%9F%B3%E9%A2%91/">
+      
+      
+      
+        <link rel="prev" href="../%E6%97%A0%E7%BA%BF%E7%94%B5/">
+      
+      
+        <link rel="next" href="../%E5%B5%8C%E5%85%A5%E5%BC%8F/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../avatar_without_background.png">
+      <meta name="generator" content="zensical-0.1.2">
+    
+    
+      
+        <title>数字音频 - Blank's CS Learning</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.ebb7f775.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300i,400,400i,500,500i,700,700i%7CJetbrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Noto Serif SC";--md-code-font:"Jetbrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        跳转至
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Blank&#x27;s CS Learning" class="md-header__button md-logo" aria-label="Blank's CS Learning" data-md-component="logo">
+      
+  <img src="../../avatar_without_background.png" alt="Blank's CS Learning">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">导航栏</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Blank's CS Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              数字音频
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">查找</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="查找">
+  <button type="button" class="md-search__button">
+    查找
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/cyhkbl/CS-Learning" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E7%8E%AF%E5%A2%83/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-tabs__link">
+          
+  
+  环境
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Linux/%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  Linux
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  网络
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E5%AE%89%E5%85%A8/%E8%AE%BE%E5%A4%87%E8%AF%86%E5%88%AB%E4%B8%8E%E8%AE%A4%E8%AF%81/" class="md-tabs__link">
+          
+  
+  安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Git/%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  Git
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Python/%E5%87%BD%E6%95%B0/" class="md-tabs__link">
+          
+  
+  Python
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../OI/%E9%80%92%E5%BD%92/" class="md-tabs__link">
+          
+  
+  OI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E5%89%8D%E7%AB%AF/HTML/" class="md-tabs__link">
+          
+  
+  前端
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E4%BA%91/SSH/" class="md-tabs__link">
+          
+  
+  云
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../AI/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/" class="md-tabs__link">
+          
+  
+  AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/ROS/" class="md-tabs__link">
+          
+  
+  具身智能
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../%E6%97%A0%E7%BA%BF%E7%94%B5/" class="md-tabs__link">
+          
+  
+  EE
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BME/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" class="md-tabs__link">
+          
+  
+  BME
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../CADD/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" class="md-tabs__link">
+          
+  
+  CADD
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Web3/%E5%B8%81/" class="md-tabs__link">
+          
+  
+  Web3
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Latex/%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  Latex
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Lisp/Scheme/" class="md-tabs__link">
+          
+  
+  Lisp
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Blank&#x27;s CS Learning" class="md-nav__button md-logo" aria-label="Blank's CS Learning" data-md-component="logo">
+      
+  <img src="../../avatar_without_background.png" alt="Blank's CS Learning">
+
+    </a>
+    Blank's CS Learning
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cyhkbl/CS-Learning" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  主页
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../%E7%8E%AF%E5%A2%83/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  环境
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../Linux/%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Linux
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  网络
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../%E5%AE%89%E5%85%A8/%E8%AE%BE%E5%A4%87%E8%AF%86%E5%88%AB%E4%B8%8E%E8%AE%A4%E8%AF%81/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  安全
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../Git/%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Git
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../Python/%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Python
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../OI/%E9%80%92%E5%BD%92/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OI
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../%E5%89%8D%E7%AB%AF/HTML/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  前端
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../%E4%BA%91/SSH/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  云
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../AI/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  AI
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/ROS/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  具身智能
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  EE
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_13">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  EE
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%97%A0%E7%BA%BF%E7%94%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  无线电
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  数字音频
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  数字音频
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-nyquistshannon-sampling-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        奈奎斯特-香农采样定理 (Nyquist–Shannon Sampling Theorem)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fourier-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        傅里叶分析 (Fourier Analysis)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#human-auditory-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        人耳听觉阈值 (Human Auditory Threshold)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bit-depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        二、 采样位深（Bit Depth）与动态范围
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、 采样位深（Bit Depth）与动态范围">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2.1 量化精度与量化噪声
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2.2 动态范围的计算
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2.3 工程规格的合理性分析
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        三、 采样率（Sample Rate）与信号重建
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、 采样率（Sample Rate）与信号重建">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.1 频域带宽
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.2 采样点与波形重建的误区
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aliasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        四、 混叠（Aliasing）与滤波器设计
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、 混叠（Aliasing）与滤波器设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4.1 抗混叠与低通滤波
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4.2 高采样率的工程优势
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intermodulation-distortion-imd" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        五、 互调失真（Intermodulation Distortion, IMD）与超声感知
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、 互调失真（Intermodulation Distortion, IMD）与超声感知">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.1 互调失真机制
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.2 音染与“空气感”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jitter" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        六、 传输介质与时基误差（Jitter）分析
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、 传输介质与时基误差（Jitter）分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.1 误码率与纠错编码
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-jitter" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.2 时基误差（Jitter）
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analog-interconnection-transmission-physics" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        七、 模拟互连与传输物理 (Analog Interconnection &amp; Transmission Physics)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、 模拟互连与传输物理 (Analog Interconnection &amp; Transmission Physics)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-balanceddifferential-signaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7.1 平衡传输（Balanced）与差分信号（Differential Signaling）
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-skin-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7.2 导线物理与集肤效应（Skin Effect）辨伪
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%B5%8C%E5%85%A5%E5%BC%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  嵌入式
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%BF%91%E5%9C%BA%E9%80%9A%E8%AE%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  近场通讯
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../BME/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  BME
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../CADD/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CADD
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../Web3/%E5%B8%81/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Web3
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../Latex/%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Latex
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+  
+    <a href="../../Lisp/Scheme/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Lisp
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-nyquistshannon-sampling-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        奈奎斯特-香农采样定理 (Nyquist–Shannon Sampling Theorem)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fourier-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        傅里叶分析 (Fourier Analysis)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#human-auditory-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        人耳听觉阈值 (Human Auditory Threshold)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bit-depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        二、 采样位深（Bit Depth）与动态范围
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、 采样位深（Bit Depth）与动态范围">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2.1 量化精度与量化噪声
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2.2 动态范围的计算
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        2.3 工程规格的合理性分析
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        三、 采样率（Sample Rate）与信号重建
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、 采样率（Sample Rate）与信号重建">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.1 频域带宽
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        3.2 采样点与波形重建的误区
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aliasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        四、 混叠（Aliasing）与滤波器设计
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、 混叠（Aliasing）与滤波器设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4.1 抗混叠与低通滤波
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        4.2 高采样率的工程优势
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intermodulation-distortion-imd" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        五、 互调失真（Intermodulation Distortion, IMD）与超声感知
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、 互调失真（Intermodulation Distortion, IMD）与超声感知">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.1 互调失真机制
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        5.2 音染与“空气感”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jitter" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        六、 传输介质与时基误差（Jitter）分析
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、 传输介质与时基误差（Jitter）分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.1 误码率与纠错编码
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-jitter" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        6.2 时基误差（Jitter）
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analog-interconnection-transmission-physics" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        七、 模拟互连与传输物理 (Analog Interconnection &amp; Transmission Physics)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、 模拟互连与传输物理 (Analog Interconnection &amp; Transmission Physics)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-balanceddifferential-signaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7.1 平衡传输（Balanced）与差分信号（Differential Signaling）
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-skin-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        7.2 导线物理与集肤效应（Skin Effect）辨伪
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="导航栏" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    主页
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../%E6%97%A0%E7%BA%BF%E7%94%B5/" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    EE
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+  
+    <a href="https://github.com/cyhkbl/CS-Learning/edit/master/docs/EE/数字音频.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-file-pen" viewBox="0 0 24 24"><path d="M12.659 22H18a2 2 0 0 0 2-2V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v9.34"/><path d="M14 2v5a1 1 0 0 0 1 1h5M10.378 12.622a1 1 0 0 1 3 3.003L8.36 20.637a2 2 0 0 1-.854.506l-2.867.837a.5.5 0 0 1-.62-.62l.836-2.869a2 2 0 0 1 .506-.853z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/cyhkbl/CS-Learning/raw/master/docs/EE/数字音频.md" title="查看本页的源代码" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-file-code-2" viewBox="0 0 24 24"><path d="M4 12.15V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.706.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2h-3.35"/><path d="M14 2v5a1 1 0 0 0 1 1h5M5 16l-3 3 3 3M9 22l3-3-3-3"/></svg>
+    </a>
+  
+
+
+<h1 id="_1">数字音频<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>随着高解析度音频（High-Resolution Audio, Hi-Res）的普及，工程界与其在消费电子领域的应用存在诸多认知偏差。本文旨在从信号处理（DSP）与心理声学的角度，结合奈奎斯特采样定理与量化理论，探讨CD规格（16bit/44.1kHz）与Hi-Res规格在信号保真度及回放链路中的实际差异。</p>
+<p>结论先行：Hi-Res规格相较于CD规格，在客观上确实具有更低的量化噪声基底（Noise Floor）与更宽的通带范围。然而，这些优势主要体现于后期制作（Post-Production）的信号处理链路中。在最终回放端（Playback），其听感差异主要源于DAC滤波器的设计余量与非线性失真特性，而非人耳对超声频段的直接感知。</p>
+<h2 id="-nyquistshannon-sampling-theorem">奈奎斯特-香农采样定理 (Nyquist–Shannon Sampling Theorem)<a class="headerlink" href="#-nyquistshannon-sampling-theorem" title="Permanent link">&para;</a></h2>
+<p>若对连续信号 <span class="arithmatex">\(x(t)\)</span> 进行等间隔采样，当采样频率 <span class="arithmatex">\(f_s\)</span> 大于信号最高频率 <span class="arithmatex">\(f_{max}\)</span> 的两倍（即 <span class="arithmatex">\(f_s &gt; 2f_{max}\)</span>）时，原始信号可从采样序列中通过理想低通滤波器无损重建（Perfect Reconstruction）。</p>
+<h2 id="fourier-analysis">傅里叶分析 (Fourier Analysis)<a class="headerlink" href="#fourier-analysis" title="Permanent link">&para;</a></h2>
+<p>任意满足狄利克雷条件的周期信号均可分解为一组正弦波与余弦波的线性组合。即复杂的时域声波信号在频域上可被解析为不同频率、幅度和相位的谐波分量。</p>
+<h2 id="human-auditory-threshold">人耳听觉阈值 (Human Auditory Threshold)<a class="headerlink" href="#human-auditory-threshold" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code>心理声学研究表明，人类听觉系统的频率响应范围约为 20Hz - 20kHz。大多数成年人的高频听力上限在 15kHz - 18kHz 之间，且随年龄增长呈衰减趋势（Presbycusis）。
+</code></pre></div>
+<h2 id="bit-depth">二、 采样位深（Bit Depth）与动态范围<a class="headerlink" href="#bit-depth" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1 量化精度与量化噪声<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<p>采样位深 <span class="arithmatex">\(n\)</span> 决定了离散信号幅度的分辨率。在模数转换（ADC）过程中，连续的电压幅度被映射为 <span class="arithmatex">\(2^n\)</span> 个离散电平。未能精确映射的部分即为量化误差（Quantization Error），在频域上表现为量化噪声。</p>
+<h3 id="22">2.2 动态范围的计算<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<p>动态范围（Dynamic Range, DR）定义为系统能处理的最大不失真信号与噪声基底之比。对于线性PCM编码，其计算公式为：</p>
+<div class="arithmatex">\[ DR_{dB} = 20 \log_{10}(2^n) = n \cdot 20 \log_{10}(2) \approx 6.02n \]</div>
+<ul>
+<li><strong>16bit (CD规格)：</strong> <span class="arithmatex">\(DR \approx 96.32 \text{ dB}\)</span></li>
+<li><strong>24bit (Hi-Res规格)：</strong> <span class="arithmatex">\(DR \approx 144.48 \text{ dB}\)</span></li>
+</ul>
+<h3 id="23">2.3 工程规格的合理性分析<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<p>为何CD标准定为16bit？这基于等响度曲线（Equal-loudness contours, ISO 226标准）与环境噪声的考量：
+*   在普通听音环境（约为噪声评价曲线 NR-30），环境底噪约为30dB SPL。
+*   人耳痛阈约为120dB SPL。
+*   有效的听觉动态范围约为 <span class="arithmatex">\(120 - 30 = 90 \text{ dB}\)</span>。</p>
+<p>16bit提供的96dB动态范围恰好覆盖了这一区间。若追求24bit的144dB动态范围，在重放微弱信号清晰可闻的前提下，其最大声压级将远超人耳痛阈，可能导致永久性听力损伤。因此，24bit在录音与混音阶段为DSP处理（如余量控制、噪底管理）提供了必要的Headroom，但在回放端已超出人耳生理极限。</p>
+<h2 id="sample-rate">三、 采样率（Sample Rate）与信号重建<a class="headerlink" href="#sample-rate" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 频域带宽<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>采样率决定了系统的奈奎斯特频率（Nyquist Frequency, <span class="arithmatex">\(f_n = f_s/2\)</span>）。
+*   <strong>44.1kHz采样率：</strong> 对应的奈奎斯特频率为 22.05kHz，覆盖了人耳20kHz的听觉上限。</p>
+<h3 id="32">3.2 采样点与波形重建的误区<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<p>常见的误解认为：高采样率之所以优越，是因为单位时间内的采样点更多，从而波形更“平滑”，而低采样率波形呈“锯齿状”。</p>
+<p><strong>工程修正：</strong>
+数字信号在经过数模转换器（DAC）时，并非简单地将离散点连线。DAC包含一个<strong>重建滤波器（Reconstruction Filter）</strong>，通常为理想低通滤波器的近似。根据Sinc插值公式：</p>
+<div class="arithmatex">\[ x(t) = \sum_{n=-\infty}^{\infty} x[n] \cdot \text{sinc}\left(\frac{t - nT}{T}\right) \]</div>
+<p>只要满足奈奎斯特采样定理，DAC输出的模拟波形是唯一确定的连续平滑曲线，不存在所谓的“阶梯”或“锯齿”。对于20kHz以内的信号，44.1kHz与192kHz采样率重建出的波形在数学上是全等的。</p>
+<h2 id="aliasing">四、 混叠（Aliasing）与滤波器设计<a class="headerlink" href="#aliasing" title="Permanent link">&para;</a></h2>
+<p>虽然44.1kHz足以覆盖听阈，但高采样率在工程实现上具有显著优势。</p>
+<h3 id="41">4.1 抗混叠与低通滤波<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p>当输入信号频率高于 <span class="arithmatex">\(f_s/2\)</span> 时，会发生频谱混叠，高频噪声会折叠回基带（Baseband）成为虚假信号。因此，ADC前级必须部署抗混叠滤波器（Anti-aliasing Filter）。</p>
+<ul>
+<li><strong>CD规格的挑战：</strong> 有效带宽（20kHz）与奈奎斯特频率（22.05kHz）之间的过渡带极窄。这要求滤波器具有极陡峭的滚降特性（Brick-wall filter）。</li>
+<li><strong>吉布斯现象（Gibbs Phenomenon）：</strong> 极陡峭的滤波器在时域上会产生显著的振铃效应（Ringing Artifact），表现为瞬态响应的前回声（Pre-echo）和后回声（Post-echo）。</li>
+</ul>
+<h3 id="42">4.2 高采样率的工程优势<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<p>提升采样率（如96kHz）将奈奎斯特频率提升至48kHz。此时滤波器可以采用更平缓的滚降曲线（例如从20kHz过渡至48kHz），这带来两个优势：
+1.  降低了模拟滤波器设计的复杂度与成本。
+2.  显著改善了时域上的瞬态响应，减少了振铃效应。</p>
+<p><strong>结论：</strong> Hi-Res设备的听感优势，往往源于滤波器设计自由度带来的相位失真减少，而非人耳听到了超声波。</p>
+<h2 id="intermodulation-distortion-imd">五、 互调失真（Intermodulation Distortion, IMD）与超声感知<a class="headerlink" href="#intermodulation-distortion-imd" title="Permanent link">&para;</a></h2>
+<p>关于“超声波感知”的学术探讨指出，虽然人耳无法直接感知21kHz以上的基频，但超声频段可能通过<strong>非线性系统</strong>对听感产生间接影响。</p>
+<h3 id="51">5.1 互调失真机制<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<p>若回放链路（放大器、扬声器）存在非线性，两个高频信号 <span class="arithmatex">\(f_1, f_2\)</span> 会产生互调产物 <span class="arithmatex">\(f_2 - f_1\)</span>。若 <span class="arithmatex">\(f_1, f_2\)</span> 均为超声波，但其差频落入人耳听觉范围（20Hz-20kHz），则会被感知。</p>
+<h3 id="52">5.2 音染与“空气感”<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<p>高频信号引发的互调失真及谐波失真（THD），在主观听感上常被描述为“空气感”或“温暖感”。这本质上是一种对原始信号的<strong>非线性失真（Distortion）<strong>或</strong>音染（Coloration）</strong>。高线性度的设备（高保真）应尽量避免此类失真，而部分Hi-Res设备可能通过这种机制营造了特定的主观听感偏好。</p>
+<h2 id="jitter">六、 传输介质与时基误差（Jitter）分析<a class="headerlink" href="#jitter" title="Permanent link">&para;</a></h2>
+<p>在数字音频传输与存储领域（如CD光盘、USB传输），存在关于介质材质影响音质的争论。从通信原理角度分析如下：</p>
+<h3 id="61">6.1 误码率与纠错编码<a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
+<p>数字存储介质（CD、硬盘）记录的是二进制数据。CD系统采用了多重冗余校验机制：
+1.  <strong>EFM/NRZI调制：</strong> 并非直接记录0/1电平，而是利用信号翻转代表逻辑"1"，增强了抗干扰能力。
+2.  <strong>CIRC（Cross-Interleaved Reed-Solomon Coding）：</strong> 交叉交错里德-所罗门码提供了极强的前向纠错（FEC）能力，可修复盘面物理损伤导致的数据突发错误（Burst Error）。</p>
+<p>只要数据未超出纠错阈值，读取出的数字流是比特完美（Bit-perfect）的，存储介质的物理材质不会改变解码后的波形。</p>
+<h3 id="62-jitter">6.2 时基误差（Jitter）<a class="headerlink" href="#62-jitter" title="Permanent link">&para;</a></h3>
+<p>Jitter指数字信号在时间轴上的抖动。
+*   <strong>CD系统：</strong> 盘片制造工艺导致的物理Jitter主要影响读取时的RF信号眼图质量，但在解码前会经过FIFO缓冲区和高精度晶振重整时钟（Re-clocking），因此物理介质的Jitter极难直接传递至DAC输出端。
+*   <strong>现代DAC：</strong> 普遍采用异步USB传输（Asynchronous USB）与锁相环（PLL）技术，本地时钟主导数模转换时序，使得前端传输链路的Jitter影响在工程上可被忽略。</p>
+<h3 id="analog-interconnection-transmission-physics">七、 模拟互连与传输物理 (Analog Interconnection &amp; Transmission Physics)<a class="headerlink" href="#analog-interconnection-transmission-physics" title="Permanent link">&para;</a></h3>
+<p>在信号经由DAC芯片完成数模转换及低通滤波后，进入模拟传输阶段。在此环节，消费电子市场常存在大量基于伪科学的营销概念。从工程物理角度，主要涉及差分传输机制与导体物理特性。</p>
+<h4 id="71-balanceddifferential-signaling">7.1 平衡传输（Balanced）与差分信号（Differential Signaling）<a class="headerlink" href="#71-balanceddifferential-signaling" title="Permanent link">&para;</a></h4>
+<p>在消费音频领域被称为“平衡接口”（如XLR, 4.4mm Pentaconn）的技术，在工业与通信工程中实质为<strong>差分信号传输</strong>。</p>
+<ul>
+<li>
+<p><strong>共模抑制比（CMRR）：</strong>
+    单端传输（Single-ended, RCA）参考地电位传输信号，极易受地环路（Ground Loop）及环境电磁辐射干扰。
+    差分传输利用双绞线发送两路幅度相等、相位相反的信号 (<span class="arithmatex">\(V_{hot}, V_{cold}\)</span>)。接收端采用差分放大器，其输出为 <span class="arithmatex">\(V_{out} = A_d(V_{hot} - V_{cold})\)</span>。
+    对于外界引入的共模干扰噪声 (<span class="arithmatex">\(V_{noise}\)</span>)，由于同时作用于两路信号：
+    $$ (V_{hot} + V_{noise}) - (V_{cold} + V_{noise}) = V_{hot} - V_{cold} $$
+    理论上共模噪声被完全抵消。这与RS-485、CAN总线的抗干扰原理一致。</p>
+</li>
+<li>
+<p><strong>驱动电平与压摆率（Slew Rate）：</strong>
+    消费级标准中，XLR平衡接口通常输出 <strong>4Vrms</strong> 电平，而RCA单端通常为 <strong>2Vrms</strong>。
+    由此带来的听感差异（“推力大”、“动态好”），本质上是<strong>电压摆幅翻倍</strong>带来的声压级提升（+6dB），以及对高阻抗负载更强的电压驱动能力，而非传输方式本身改变了音质结构。</p>
+</li>
+</ul>
+<h4 id="72-skin-effect">7.2 导线物理与集肤效应（Skin Effect）辨伪<a class="headerlink" href="#72-skin-effect" title="Permanent link">&para;</a></h4>
+<p>高端线材营销中常提及“集肤效应”导致高频信号劣化，这在音频频段存在严重的数量级谬误。</p>
+<ul>
+<li><strong>集肤深度计算：</strong>
+    集肤效应指交流电倾向于在导体表面流动的现象。集肤深度 <span class="arithmatex">\(\delta\)</span> 公式为：
+    $$ \delta = \sqrt{\frac{2\rho}{\omega\mu}} $$
+    其中 <span class="arithmatex">\(\rho\)</span> 为电阻率，<span class="arithmatex">\(\omega\)</span> 为角频率，<span class="arithmatex">\(\mu\)</span> 为磁导率。
+    对于铜导线，在人耳听觉上限 <strong>20kHz</strong> 处，集肤深度约为 <strong>0.46mm</strong>。</li>
+<li><strong>工程结论：</strong>
+    只要音频线缆的单股导线直径小于 <span class="arithmatex">\(2 \times 0.46mm \approx 0.92mm\)</span>（约为19 AWG），电流几乎是均匀流过整个截面的。家庭短距离传输（&lt;5米）中，线材的<strong>直流电阻（DCR）</strong>、<strong>接插件的接触电阻</strong>以及<strong>屏蔽层的覆盖率</strong>是影响信号完整性的主导因素，而非导体的晶体排列（如单晶铜）或集肤效应。</li>
+</ul>
+<h1 id="dac">现代音频DAC架构<a class="headerlink" href="#dac" title="Permanent link">&para;</a></h1>
+<p>在数字音频的存储与传输层面，16bit/44.1kHz（CD规格）通常被视为满足人耳听觉极限的“黄金标准”。然而，在数模转换（D/A Conversion）的硬件实现层面，现代高性能DAC芯片（如ESS Sabre系列, AKM Velvet Sound系列）几乎从未工作在44.1kHz的基频下。<strong>Delta-Sigma (<span class="arithmatex">\(\Delta\Sigma\)</span>) 架构</strong>利用**过采样（Oversampling）<strong>与</strong>噪声整形（Noise Shaping）**技术，突破模拟电路的物理局限，实现高信噪比（SNR）与高线性度。</p>
+<h2 id="r-2r">一、 传统R-2R梯形架构的局限性<a class="headerlink" href="#r-2r" title="Permanent link">&para;</a></h2>
+<p>早期的多位DAC（Multi-bit DAC）多采用R-2R梯形电阻网络。对于一个N位的DAC，需要<span class="arithmatex">\(2^N\)</span>个精密电阻或复杂的电流源阵列。</p>
+<ul>
+<li><strong>物理瓶颈：</strong> 电阻的匹配精度直接决定了转换的线性度。要在量产芯片中维持16bit甚至24bit级别的元件匹配精度（误差需小于<span class="arithmatex">\(1/2^{16}\)</span>），成本极高且受温度漂移影响严重。</li>
+<li><strong>零交叉失真（Zero-crossing Distortion）：</strong> 在小信号过零点处，MSB（最高有效位）的切换可能引发显著的毛刺（Glitch），导致非线性失真。</li>
+</ul>
+<p>为了解决上述硬件制造难题，现代音频工业转向了基于<strong>时间换精度</strong>的策略——即Delta-Sigma调制。</p>
+<h2 id="oversampling">二、 过采样（Oversampling）：用速度换取分辨率<a class="headerlink" href="#oversampling" title="Permanent link">&para;</a></h2>
+<h3 id="21_1">2.1 理论基础：量化噪声功率谱密度<a class="headerlink" href="#21_1" title="Permanent link">&para;</a></h3>
+<p>假设量化位深为 <span class="arithmatex">\(N\)</span>，采样率为 <span class="arithmatex">\(f_s\)</span>。量化误差被建模为均匀分布的白噪声，其总功率 <span class="arithmatex">\(P_Q\)</span> 固定为：
+$$ P_Q = \frac{\Delta^2}{12} $$
+其中 <span class="arithmatex">\(\Delta\)</span> 为量化步长（LSB）。</p>
+<p>在奈奎斯特频带 <span class="arithmatex">\(0 \sim f_s/2\)</span> 内，噪声功率谱密度（PSD）为常数：
+$$ S_Q(f) = \frac{P_Q}{f_s/2} = \frac{\Delta^2}{6f_s} $$</p>
+<h3 id="22_1">2.2 过采样的增益机制<a class="headerlink" href="#22_1" title="Permanent link">&para;</a></h3>
+<p>若我们将采样率提高 <span class="arithmatex">\(K\)</span> 倍（<span class="arithmatex">\(K\)</span> 称为过采样率，Oversampling Ratio, OSR），即 <span class="arithmatex">\(f_{new} = K \cdot f_s\)</span>：
+1.  总噪声功率 <span class="arithmatex">\(P_Q\)</span> 保持不变（因为 <span class="arithmatex">\(\Delta\)</span> 不变）。
+2.  噪声能量被均匀“摊薄”在更宽的频带 <span class="arithmatex">\(0 \sim K \cdot f_s/2\)</span> 上。
+3.  PSD 幅度下降为原来的 <span class="arithmatex">\(1/K\)</span>。</p>
+<p>此时，我们在数字域通过一个截止频率为 <span class="arithmatex">\(f_b\)</span>（音频基带带宽，20kHz）的理想低通滤波器。这就意味着我们滤除了 <span class="arithmatex">\(f_b\)</span> 以外的高频噪声。</p>
+<p><strong>带内信噪比提升公式：</strong>
+$$ \Delta \text{SNR (dB)} = 10 \log_{10}(K) $$
+*   <strong>工程推论：</strong> 每进行4倍过采样（<span class="arithmatex">\(K=4\)</span>），信噪比仅提升6dB（相当于1 bit有效位）。
+*   <strong>局限：</strong> 若仅靠过采样要达到CD级16bit（96dB）的动态范围，需要极高的OSR，这对时钟抖动（Jitter）和开关速度提出了不切实际的要求。因此，必须引入噪声整形。</p>
+<h2 id="noise-shaping">三、 噪声整形（Noise Shaping）：频域上的搬运工<a class="headerlink" href="#noise-shaping" title="Permanent link">&para;</a></h2>
+<p>过采样只是“稀释”了噪声，而噪声整形则是主动“搬运”噪声。其核心是通过负反馈环路，改变量化噪声的频谱分布。</p>
+<h3 id="31-delta-sigma">3.1 一阶Delta-Sigma调制器模型<a class="headerlink" href="#31-delta-sigma" title="Permanent link">&para;</a></h3>
+<p>一个基础的一阶<span class="arithmatex">\(\Delta\Sigma\)</span>调制器包含：差分器、积分器、量化器（ADC/DAC）和反馈回路。
+设输入信号为 <span class="arithmatex">\(X(z)\)</span>，量化噪声为 <span class="arithmatex">\(E(z)\)</span>，输出为 <span class="arithmatex">\(Y(z)\)</span>。其Z域传输函数可推导为：</p>
+<div class="arithmatex">\[ Y(z) = z^{-1}X(z) + (1 - z^{-1})E(z) \]</div>
+<ul>
+<li><strong>信号传输函数 (STF)：</strong> <span class="arithmatex">\(STF(z) = z^{-1}\)</span>。这只是一个单位延时，表明音频信号无损通过（全通特性）。</li>
+<li><strong>噪声传输函数 (NTF)：</strong> <span class="arithmatex">\(NTF(z) = 1 - z^{-1}\)</span>。这是一个高通滤波器（High-pass Filter）。</li>
+</ul>
+<h3 id="32_1">3.2 频谱整形的物理意义<a class="headerlink" href="#32_1" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(NTF(z)\)</span> 的高通特性意味着：
+*   在低频段（音频带内，<span class="arithmatex">\(z \to 1\)</span>），<span class="arithmatex">\(NTF \to 0\)</span>，量化噪声被大幅抑制。
+*   在高频段（<span class="arithmatex">\(f_s/2\)</span> 处，<span class="arithmatex">\(z \to -1\)</span>），<span class="arithmatex">\(NTF \to 2\)</span>，量化噪声被放大。</p>
+<p><strong>结论：</strong> 噪声整形将音频带内的量化噪声“推挤”到了人耳听不见的高频区域（MHz级别）。</p>
+<h2 id="dac_1">四、 现代DAC芯片的完整信号链路<a class="headerlink" href="#dac_1" title="Permanent link">&para;</a></h2>
+<p>结合过采样与噪声整形，现代音频DAC芯片（如ES9038, AK4499）的标准工作流程如下：</p>
+<h3 id="step-1-interpolation-filter">Step 1: 插值滤波器（Interpolation Filter）<a class="headerlink" href="#step-1-interpolation-filter" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>输入：</strong> 16bit / 44.1kHz PCM信号（存储格式）。</li>
+<li><strong>处理：</strong> 芯片内部DSP进行数字插值，通常进行 64x, 128x 或 256x 上采样。</li>
+<li><strong>输出：</strong> 例如 <span class="arithmatex">\(44.1 \text{kHz} \times 256 \approx 11.2896 \text{ MHz}\)</span> 的高采样率数据流。</li>
+<li><strong>作用：</strong> 实现过采样，初步稀释噪声密度，并产生镜像频谱以便后续滤除。</li>
+</ul>
+<h3 id="step-2-delta-sigma-modulator">Step 2: Delta-Sigma 调制器（Modulator）<a class="headerlink" href="#step-2-delta-sigma-modulator" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>处理：</strong> 在MHz级的高频下，将高位深数据（如24bit）重新量化为极低位深（通常是 1-bit 到 6-bit）。</li>
+<li><strong>核心动作：</strong> 应用高阶噪声整形（3阶或更高），将带内信噪比提升至120dB以上，同时将巨大的量化噪声能量堆积在超声频段。</li>
+<li><strong>1-bit vs Multi-bit：</strong><ul>
+<li><strong>1-bit (DSD流)：</strong> 线性度极好（两点决定直线），但对时钟抖动极其敏感，且高频噪声极大。</li>
+<li><strong>Multi-bit (如5-bit)：</strong> 现代主流架构。结合了R-2R的低噪声特性和1-bit的高线性度，通常配合动态元件匹配（DEM）技术来消除元件误差。</li>
+</ul>
+</li>
+</ul>
+<h3 id="step-3-analog-lpf">Step 3: 模拟低通滤波器（Analog LPF）<a class="headerlink" href="#step-3-analog-lpf" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>输入：</strong> 含有巨量高频噪声的模拟阶梯波或PWM波。</li>
+<li><strong>处理：</strong> 简单的模拟LC或RC滤波器。</li>
+<li><strong>作用：</strong> “切掉”被噪声整形推到高频的量化噪声。由于噪声主要集中在MHz区域，这个模拟滤波器的设计变得非常轻松（滚降不需要很陡峭），从而保证了良好的相位线性。</li>
+</ul>
+<h2 id="_2">五、 关键工程结论：存储与转换的解耦<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>存储与回放的非对称性：</strong></p>
+<ul>
+<li><strong>存储端（Source）：</strong> 44.1kHz/16bit 足以承载完整的听觉信息。直接存储高采样率（如192kHz）文件对于降低带内噪声的效率极低（边际效应递减）。</li>
+<li><strong>转换端（Device）：</strong> DAC芯片内部<strong>必须</strong>使用超高采样率（MHz级）工作。这是为了利用<span class="arithmatex">\(\Delta\Sigma\)</span>调制技术，以低成本的硬件架构实现超越20bit的等效精度。</li>
+</ul>
+</li>
+<li>
+<p><strong>“有用”的辩证法：</strong>
+    提高采样率是降低量化噪声的<strong>必要手段</strong>（在芯片内部处理过程中），而非<strong>必要源头</strong>（在音乐文件格式上）。</p>
+</li>
+<li>
+<p><strong>设计哲学：</strong>
+    现代混合信号IC设计的核心哲学是**“数字化模拟电路”**——用廉价、高速、大规模集成的数字逻辑（DSP），去补偿或替代昂贵、难以匹配的模拟器件性能。Hi-Res音频的技术红利，本质上是半导体工艺制程进步（更快的开关速度）带来的红利。</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../%E6%97%A0%E7%BA%BF%E7%94%B5/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 无线电">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                无线电
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../%E5%B5%8C%E5%85%A5%E5%BC%8F/" class="md-footer__link md-footer__link--next" aria-label="下一页: 嵌入式">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                嵌入式
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 空白棱
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      
+<div class="md-progress" data-md-component="progress" role="progressbar" aria-label="Loading"></div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["announce.dismiss","content.action.edit","content.action.view","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","header.autohide","navigation.expand","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.instant.progress","navigation.path","navigation.prune","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","search.suggest","toc.follow"],"redirect":null,"search":"../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","clipboard.error":"Could not copy to clipboard","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3cb411a8.min.js"></script>
+      
+    
+  </body>
+</html>
